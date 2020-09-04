@@ -1,125 +1,51 @@
 <?php
 
-namespace App\Entity;
+namespace App\Form\Type;
 
-use App\Repository\CtheoriqueRepository;
-use Doctrine\ORM\Mapping as ORM;
-use Symfony\Component\Validator\Constraints as Assert;
-use Doctrine\Common\Collections\ArrayCollection;
+use AppBundle\Form\DocumentHandlerType;
+use Symfony\Bridge\Doctrine\Form\Type\EntityType;
+use Symfony\Component\Form\AbstractType;
+use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
+use Symfony\Component\Form\Extension\Core\Type\DateTimeType;
+use Symfony\Component\Form\Extension\Core\Type\FileType;
+use Symfony\Component\Form\FormBuilderInterface;
+use Symfony\Component\OptionsResolver\OptionsResolver;
+use Symfony\Component\Form\Extension\Core\Type\DateType;
+use Symfony\Component\Form\Extension\Core\Type\TextType;
+use	Symfony\Component\Form\Extension\Core\Type\NumberType;
 
-/**
- * @ORM\Entity(repositoryClass=CtheoriqueRepository::class)
- * @ORM\HasLifecycleCallbacks()
- */
-class Ctheorique
+class CpaymentType extends AbstractType
 {
     /**
-     * @ORM\Id()
-     * @ORM\GeneratedValue()
-     * @ORM\Column(type="integer")
+     * @param FormBuilderInterface $builder
+     * @param array $options
      */
-    private $id;
+    public function buildForm(FormBuilderInterface $builder, array $options)
+    {
+        $builder
+
+            ->add('montant', NumberType::class,array(
+                'label' => 'cpayment.label.montant'
+                ))
+
+                ->add('date_paiement', DateType::class, [
+                      'widget' => 'single_text',
+                     'format' => 'yyyy-MM-dd',
+                     'label' => 'cpayment.label.date_paiement'
+                  ])
+
+
+            ;
+    }
 
     /**
-      * @var decimal
-      * @Assert\NotBlank(message="field.not_blank")
-      * @ORM\Column(name="seance", type="integer")
-      */
-     private $seance;
-
-
-    /**
-     * @ORM\ManyToOne(targetEntity="App\Entity\Candidat", inversedBy="ctheoriques", cascade={"persist"})
-     * @ORM\JoinColumn(name="candidat_id", referencedColumnName="id")
+     * @param OptionsResolver $resolver
      */
-    private $candidat;
-
-    /**
-     * @var bool
-     *
-     * @ORM\Column(name="deleted", type="boolean")
-     */
-    private $deleted = 0;
-
-    /**
-     * @var \DateTime
-     *
-     * @ORM\Column(name="created", type="datetime")
-     */
-    private $created;
-
-    /**
-     * @var \DateTime
-     *
-     * @ORM\Column(name="updated", type="datetime")
-     */
-    private $updated;
-
-
-
-    public function getId()
+    public function configureOptions(OptionsResolver $resolver)
     {
-        return $this->id;
-    }
-
-    public function getSeance()
-    {
-        return $this->seance;
-    }
-
-    public function setSeance($seance)
-    {
-        $this->seance = $seance;
-
-        return $this;
-    }
-
-
-    public function getDeleted()
-    {
-        return $this->deleted;
-    }
-
-    public function setDeleted(bool $deleted)
-    {
-        $this->deleted = $deleted;
-
-        return $this;
-    }
-
-    public function getCreated()
-    {
-        return $this->created;
-    }
-
-    public function setCreated($created)
-    {
-        $this->created = $created;
-
-        return $this;
-    }
-
-    public function getUpdated()
-    {
-        return $this->updated;
-    }
-
-    public function setUpdated($updated)
-    {
-        $this->updated = $updated;
-
-        return $this;
-    }
-
-    public function getCandidat()
-    {
-        return $this->candidat;
-    }
-
-    public function setCandidat($candidat)
-    {
-        $this->candidat = $candidat;
-
-        return $this;
+        $resolver->setDefaults(array(
+            'data_class' =>'App\Entity\Cpayment',
+            'translation_domain' => 'Cpayment',
+        ));
     }
 }
