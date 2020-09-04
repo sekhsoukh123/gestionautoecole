@@ -1,0 +1,48 @@
+ 
+
+{% trans_default_domain 'AppBundle' %}
+
+
+
+{%- block stylesheets %}
+    {{ parent() }}
+
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <!-- Font Awesome -->
+        <link rel="stylesheet"  href="{{ asset("plugins/fontawesome-free/css/all.min.css") }}">
+        <!-- Ionicons -->
+        <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+        <!-- icheck bootstrap -->
+        <link rel="stylesheet"  href="{{ asset("plugins/icheck-bootstrap/icheck-bootstrap.min.css") }}">
+        <!-- Theme style -->
+        <link rel="stylesheet"  href="{{ asset("css/adminlte.min.css") }}">
+        <!-- Google Font: Source Sans Pro -->
+        <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
+
+{%- endblock %}
+
+
+{% block content %}
+    {% block fos_user_content %}
+    <div class="login-box">
+    <!--	<div class="login-logo">
+            <a href="/">Administration <b>{ { project.name }}</b></a>
+    	</div> -->
+    	<div class="login-box-body">
+            {% block user_box %} {% endblock %}
+    	</div>
+    </div>
+    {% endblock fos_user_content %}
+{% endblock %}
+
+
+{% block javascripts %}
+	{{ parent() }}
+  <!-- jQuery -->
+<script src="{{ asset("plugins/jquery/jquery.min.js")}}"></script>
+<!-- Bootstrap 4 -->
+<script src="{{ asset("plugins/bootstrap/js/bootstrap.bundle.min.js")}}"></script>
+<!-- AdminLTE App -->
+<script src="{{ asset("js/adminlte.min.js")}}"></script>
+{%- endblock %}

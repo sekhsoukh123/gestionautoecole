@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" version="1.2">
+  <file source-language="fr" target-language="fr" datatype="plaintext" original="file.ext">
+    <header>
+      <tool tool-id="symfony" tool-name="Symfony"/>
+    </header>
+    <body>
+      <trans-unit id="PKuzCK_" resname="vignette.label.montant">
+        <source>vignette.label.montant</source>
+        <target>Montant</target>
+      </trans-unit>
+      <trans-unit id="Mu_oyXg" resname="vignette.label.created">
+        <source>vignette.label.created</source>
+        <target>Date création</target>
+      </trans-unit>
+      <trans-unit id="3VYWty9" resname="vignette.label.updated">
+        <source>vignette.label.updated</source>
+        <target>Date modification</target>
+      </trans-unit>
+      <trans-unit id="mrifX6T" resname="vignette.label.date_debut">
+        <source>vignette.label.date_debut</source>
+        <target>Date début</target>
+      </trans-unit>
+      <trans-unit id="1w9hMfg" resname="vignette.label.date_fin">
+        <source>vignette.label.date_fin</source>
+        <target>Date Fin</target>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

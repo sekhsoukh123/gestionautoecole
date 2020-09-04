@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" version="1.2">
+  <file source-language="fr" target-language="fr" datatype="plaintext" original="file.ext">
+    <header>
+      <tool tool-id="symfony" tool-name="Symfony"/>
+    </header>
+    <body>
+      <trans-unit id="dC48F0l" resname="actions.confirmation">
+        <source>actions.confirmation</source>
+        <target>__actions.confirmation</target>
+      </trans-unit>
+      <trans-unit id="KWmdQEv" resname="actions.valider">
+        <source>actions.valider</source>
+        <target>__actions.valider</target>
+      </trans-unit>
+      <trans-unit id="6fYOPP1" resname="actions.cancel">
+        <source>actions.cancel</source>
+        <target>__actions.cancel</target>
+      </trans-unit>
+      <trans-unit id="SgXVbPm" resname="actions.back_to_list">
+        <source>actions.back_to_list</source>
+        <target>__actions.back_to_list</target>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

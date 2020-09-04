@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" version="1.2">
+  <file source-language="fr" target-language="fr" datatype="plaintext" original="file.ext">
+    <header>
+      <tool tool-id="symfony" tool-name="Symfony"/>
+    </header>
+    <body>
+      <trans-unit id="myRpK_H" resname="entreprise.index.title">
+        <source>entreprise.index.title</source>
+        <target>Liste des entreprises</target>
+      </trans-unit>
+      <trans-unit id="kbT5dud" resname="entreprise.new.title">
+        <source>entreprise.new.title</source>
+        <target>Ajouter un entreprise</target>
+      </trans-unit>
+      <trans-unit id="rtZqz1." resname="entreprise.show.title">
+        <source>entreprise.show.title</source>
+        <target>Afficher un entreprise</target>
+      </trans-unit>
+      <trans-unit id="wRniF9R" resname="entreprise.label.email">
+        <source>entreprise.label.email</source>
+        <target>Email</target>
+      </trans-unit>
+      <trans-unit id="cocK1ah" resname="entreprise.label.telephone1">
+        <source>entreprise.label.telephone1</source>
+        <target>Téléphone 1</target>
+      </trans-unit>
+      <trans-unit id="6dvHokJ" resname="entreprise.label.created">
+        <source>entreprise.label.created</source>
+        <target>Date Création</target>
+      </trans-unit>
+      <trans-unit id="1yBdoSt" resname="entreprise.label.updated">
+        <source>entreprise.label.updated</source>
+        <target>Date modification</target>
+      </trans-unit>
+      <trans-unit id="RVVsJsc" resname="entreprise.label.ice">
+        <source>entreprise.label.ice</source>
+        <target>ICE</target>
+      </trans-unit>
+      <trans-unit id="UYvtp1t" resname="entreprise.label.name">
+        <source>entreprise.label.name</source>
+        <target>Nom</target>
+      </trans-unit>
+      <trans-unit id="rToCjdP" resname="entreprise.label.directeur_name">
+        <source>entreprise.label.directeur_name</source>
+        <target>Directeur</target>
+      </trans-unit>
+      <trans-unit id="DnuJL1W" resname="entreprise.label.num_licence">
+        <source>entreprise.label.num_licence</source>
+        <target>Numéro de licence</target>
+      </trans-unit>
+      <trans-unit id="hLWFc4s" resname="entreprise.label.date_licence">
+        <source>entreprise.label.date_licence</source>
+        <target>Date de licence</target>
+      </trans-unit>
+      <trans-unit id="1Bo_wms" resname="entreprise.label.num_fiscal_pro">
+        <source>entreprise.label.num_fiscal_pro</source>
+        <target>Numéro fiscal professionnel</target>
+      </trans-unit>
+      <trans-unit id="h2EPbRN" resname="entreprise.label.num_enregistrement_commercial">
+        <source>entreprise.label.num_enregistrement_commercial</source>
+        <target>Numéro d'enregistrement commercial</target>
+      </trans-unit>
+      <trans-unit id="9aqfEpz" resname="entreprise.label.ville_commercial">
+        <source>entreprise.label.ville_commercial</source>
+        <target>Ville commercial</target>
+      </trans-unit>
+      <trans-unit id="_XFqmq6" resname="entreprise.label.fax">
+        <source>entreprise.label.fax</source>
+        <target>Fax</target>
+      </trans-unit>
+      <trans-unit id="uwQwsvS" resname="entreprise.label.ville">
+        <source>entreprise.label.ville</source>
+        <target>Ville</target>
+      </trans-unit>
+      <trans-unit id="G1fw8fp" resname="entreprise.label.pays">
+        <source>entreprise.label.pays</source>
+        <target>Pays</target>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

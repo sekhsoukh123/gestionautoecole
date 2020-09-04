@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" version="1.2">
+  <file source-language="fr" target-language="fr" datatype="plaintext" original="file.ext">
+    <header>
+      <tool tool-id="symfony" tool-name="Symfony"/>
+    </header>
+    <body>
+      <trans-unit id="depense.edit.title">
+        <source>depense.edit.title</source>
+        <target>Modifier la dépense</target>
+      </trans-unit>
+      <trans-unit id="depense.index.title">
+        <source>depense.index.title</source>
+        <target>Liste des dépenses</target>
+      </trans-unit>
+      <trans-unit id="depense.new.title">
+        <source>depense.new.title</source>
+        <target>Ajouter un dépense</target>
+      </trans-unit>
+      <trans-unit id="depense.show.title">
+        <source>depense.show.title</source>
+        <target>Afficher le dépense</target>
+      </trans-unit>
+      <trans-unit id="depense.label.name">
+        <source>depense.label.name</source>
+        <target>Titre</target>
+      </trans-unit>
+      <trans-unit id="depense.label.montant">
+        <source>depense.label.montant</source>
+        <target>Montant</target>
+      </trans-unit>
+      <trans-unit id="depense.label.created">
+        <source>depense.label.created</source>
+        <target>Date Création</target>
+      </trans-unit>
+      <trans-unit id="depense.label.label.updated">
+        <source>depense.label.label.updated</source>
+        <target>Date modification</target>
+      </trans-unit>
+      <trans-unit id="emptyBox.title">
+        <source>emptyBox.title</source>
+        <target>Pas de resultat</target>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

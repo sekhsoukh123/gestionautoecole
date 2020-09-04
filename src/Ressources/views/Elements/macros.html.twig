@@ -1,0 +1,300 @@
+{% trans_default_domain 'AppBundle' %}
+
+
+{# ========================= Render show action ========================= #}
+{% macro action_show(entityName, entityId, showText=true, btnSize='sm', btnClass='primary') %}
+	<a href="{{ path('admin_' ~ entityName ~ '_show', { 'id': entityId }) }}" class="btn btn-{{ btnClass }} btn-{{ btnSize }}" data-toggle="tooltip" title="{{ 'actions.show' | trans }}">
+		<i class="fa fa-eye"> </i> {% if showText %}<span class="hidden-xs hidden-sm"> {{ 'actions.show' | trans }}</span> {% endif %}
+	</a>
+{% endmacro %}
+
+{# ========================= Render add action ========================= #}
+{% macro action_add(entityName, entityId, showText=true, btnSize='sm', btnClass='primary') %}
+	<a href="{{ path('admin_' ~ entityName ~ '_add', { 'id': entityId }) }}" class="btn btn-{{ btnClass }} btn-{{ btnSize }}" data-toggle="tooltip" title="{{ 'actions.show' | trans }}">
+		<i class="fa fa-plus"> </i> {% if showText %}<span class="hidden-xs hidden-sm">{{ 'actions.add' | trans }} </span> {% endif %}
+	</a>
+{% endmacro %}
+
+{# ========================= Render edit action ========================= #}
+{% macro action_edit(entityName, entityId, showText=true, btnSize='sm', btnClass='warning') %}
+	<a href="{{ path('admin_' ~ entityName ~ '_edit', { 'id': entityId }) }}" class="btn btn-{{ btnClass }} btn-{{ btnSize }}" data-toggle="tooltip" title="{{ 'actions.update' | trans }}">
+		<i class="fa fa-pencil"> </i>  {% if showText %}<span class="hidden-xs hidden-sm"> {{ 'actions.update' | trans }}</span> {% endif %}
+	</a>
+{% endmacro %}
+
+{# ========================= Render delete action ========================= #}
+{% macro action_delete(entityName, entityId, showText=true, btnSize='sm', btnClass='danger') %}
+	<a href="{{ path('admin_' ~ entityName ~ '_delete', { 'id': entityId }) }}" class="btn btn-{{ btnClass }} btn-{{ btnSize }}" data-toggle="confirmation" title="{{ 'actions.confirmation' | trans }}">
+		<i class="fa fa-trash"> </i> {% if showText %} <span class="hidden-xs hidden-sm"> {{ 'actions.delete' | trans }}</span> {% endif %}
+	</a>
+{% endmacro %}
+
+{% macro emptyBox(entityName=null) %}
+	<div class="empty-box">
+		<i class="fa fa-frown-o" aria-hidden="true"></i>
+		<p>{{ 'emptyBox.title' | trans }}</p>
+		<div class="actions">
+			{{ 'emptyBox.msg' | trans }}
+			{% if entityName is not empty %}
+				<form action="{{ path('admin_' ~ entityName ~ '_index') }}" method="GET">
+					<input type="text" name="filter" class="form-control pull-right"
+					placeholder="Search" value="{{ app.request.get('filter') | default('') }}">
+					<button type="submit" class="btn btn-primary btn-sm">{{ 'actions.research' | trans }}</button>
+						<a href="{{ path('admin_' ~ entityName ~ '_index') }}" class="btn btn-default btn-sm">Annuler</a>
+				</form>
+			{% endif %}
+		</div>
+	</div>
+{% endmacro %}
+
+
+{% macro filterBox(entityName, action='index') %}
+	<form action="{{ path('admin_' ~ entityName ~ '_' ~ action) }}" method="GET">
+		<div class="input-group input-group-sm" style="width: 150px;">
+			<input type="text" name="filter" class="form-control pull-right"
+			placeholder="Search" value="{{ app.request.get('filter') | default('') }}">
+			<div class="input-group-btn">
+				<button type="submit" class="btn btn-default"><i class="fa fa-search"></i></button>
+			</div>
+		</div>
+	</form>
+{% endmacro %}
+
+
+{% macro indexActions(entityName, entityId, status=false, active=null) %}
+	<a href="{{ path('admin_' ~ entityName ~ '_show', { 'id': entityId }) }}" class="btn btn-primary btn-sm" data-toggle="tooltip" title="Afficher">
+		<i class="fa fa-eye"></i>
+	</a>
+	<span class="hidden-xs hidden-sm"><a href="{{ path('admin_' ~ entityName ~ '_edit', { 'id': entityId }) }}" class="btn btn-warning btn-sm" data-toggle="tooltip" title="Modifier">
+		<i class="fa fa-pencil"></i>
+	</a></span>
+	{% if status %}
+		{% if active %}
+			<span class="hidden-xs hidden-sm"><a href="{{ path('admin_' ~ entityName ~ '_deactivate', { 'id': entityId }) }}" class="btn btn-danger btn-sm" data-toggle="tooltip" title="Désactiver"><i class="fa fa-times-circle"></i></a>
+</span>
+		{% else %}
+			<span class="hidden-xs hidden-sm"><a href="{{ path('admin_' ~ entityName ~ '_activate', { 'id': entityId }) }}" class="btn btn-success btn-sm" data-toggle="tooltip" title="Activer"><i class="fa fa-check"></i></a>
+</span>
+		{% endif %}
+	{% endif %}
+<span class="hidden-xs hidden-sm">	<a href="{{ path('admin_' ~ entityName ~ '_delete', { 'id': entityId }) }}" class="btn btn-danger btn-sm" data-toggle="confirmation" title="{{ 'actions.confirmation' | trans }}">
+		<i class="fa fa-trash"></i>
+	</a></span>
+{% endmacro %}
+
+{% macro testActions(entityName, entityId) %}
+
+<a href="{{ path('admin_' ~ entityName ~ '_show', { 'id': entityId }) }}" class="btn btn-primary btn-sm" data-toggle="tooltip" title="Afficher">
+	<i class="fa fa-eye"></i>
+</a>
+	<a href="{{ path('admin_' ~ entityName ~ '_delete', { 'id': entityId }) }}" class="btn btn-danger btn-sm" data-toggle="confirmation" title="{{ 'actions.confirmation' | trans }}">
+		<i class="fa fa-trash"></i>
+	</a>
+{% endmacro %}
+
+{% macro mailboxActions(entityName, entityId) %}
+<a href="{{ path('admin_' ~ entityName ~ '_show', { 'id': entityId }) }}" class="btn btn-primary btn-sm" data-toggle="tooltip" title="Afficher">
+	<i class="fa fa-eye"></i>
+</a>
+	<a href="{{ path('admin_' ~ entityName ~ '_delete', { 'id': entityId }) }}" class="btn btn-danger btn-sm" data-toggle="confirmation" title="{{ 'actions.confirmation' | trans }}">
+		<i class="fa fa-trash"></i>
+	</a>
+{% endmacro %}
+
+{# trans({},'AppBundle')  #}
+
+{% macro newActions(entityName) %}
+	<button type="submit" class="btn btn-success">{{ 'actions.valider' | trans }}</button>
+	<a href="{{ app.request.headers.get('referer') }}" class="btn btn-info">{{ 'actions.cancel' | trans }}</a>
+	<a href="{{ path('admin_' ~ entityName ~ '_index') }}" class="btn btn-warning pull-right">{{ 'actions.back_to_list' | trans }}</a>
+{% endmacro %}
+
+
+{% macro editActions(entityName) %}
+	<button type="submit" class="btn btn-success">{{ 'actions.valider' | trans }}</button>
+	<a href="{{ app.request.headers.get('referer') }}" class="btn btn-info">{{ 'actions.cancel' | trans }}</a>
+	<a href="{{ path('admin_' ~ entityName ~ '_index') }}" class="btn btn-warning pull-right">{{ 'actions.back_to_list' | trans }}</a>
+{% endmacro %}
+
+
+{% macro showActions(entityName, entityId, small=false,boutons=null) %}
+	{% if small == false %}
+		<a href="{{ path('admin_' ~ entityName ~ '_edit', { 'id': entityId }) }}" class="btn btn-warning btn-sm" ><i class="fa fa-pencil"></i> <span class="hidden-xs">{{ 'actions.edit' | trans }}</span></a>
+		<a href="{{ path('admin_' ~ entityName ~ '_delete', { 'id': entityId }) }}" class="btn btn-danger btn-sm" ><i class="fa fa-trash"></i> <span class="hidden-xs">{{ 'actions.delete' | trans }}</span></a>
+		<a href="{{ path('admin_' ~ entityName ~ '_index') }}" class="btn btn-info btn-sm pull-right"><i class="fa fa-reply"></i> <span class="hidden-xs">{{ 'actions.back_to_list' | trans }}</span></a>
+	{% else %}
+		<a href="{{ path('admin_' ~ entityName ~ '_edit', { 'id': entityId }) }}" class="btn btn-warning btn-sm" data-toggle="tooltip" title="Modifier">
+			<i class="fa fa-pencil"></i>
+		</a>
+		<a href="{{ path('admin_' ~ entityName ~ '_delete', { 'id': entityId }) }}" class="btn btn-danger btn-sm" data-toggle="confirmation" title="{{ 'actions.confirmation' | trans }}">
+			<i class="fa fa-trash"></i>
+		</a>
+	{% endif %}
+{% endmacro %}
+
+{% macro form_action(form, modal="#myModal") %}
+	<div class="form-group form-group-action {% if form.vars.valid==false %}has-error{% endif %}" id="{{ 'form_' ~ form.vars.id }}">
+        {{- form_label(form) -}}
+        {{- form_widget(form, {'attr': {'style': 'width: calc(100% - 15%)'}}) -}}
+        <button type="button" class="pull-right btn btn-default" data-toggle="modal" data-target="{{ modal }}">
+			{{ 'actions.add' | trans({},'AppBundle') }}
+		</button>
+        {{- form_errors(form) -}}
+    </div>
+
+{% endmacro %}
+
+{% macro backToListLink(entityName) %}
+	<a href="{{ path('admin_' ~ entityName ~ '_index') }}" class="title-link">
+		<i class="fa fa-reply" aria-hidden="true"></i>
+		{{ 'actions.back_to_list' | trans({}, 'AppBundle') }}
+	</a>
+{% endmacro %}
+
+<!--  Erreur -->
+{% macro avatar(entity, dir, show=false) %}
+	{% if entity.avatar is not empty %}
+		{% set avatar = entity.avatar %}
+	{% else %}
+		{% if entity.gender == 1 %}
+			{% set avatar = 'avatar_male.png' %}
+		{% elseif entity.gender == 2 %}
+			{% set avatar = 'avatar_female.png' %}
+		{% else %}
+			{% set avatar = 'avatar.png' %}
+		{% endif %}
+	{% endif %}
+	<img class="avatar {% if show == false %}table-avatar{% endif %}" src="{{ asset(dir ~ avatar) | imagine_filter('xs') }}">
+{% endmacro %}
+
+{% macro photo(entity, dir, show=false) %}
+	{% if entity.photo is not empty %}
+		{% set photo = entity.photo %}
+	{% endif %}
+	<img class=" table-avatar" src="{{ asset(dir ~ photo) | imagine_filter('xs') }}">
+{% endmacro %}
+
+
+{% macro avatar_header(entity, dir, show=false) %}
+	{% if entity.avatar is not empty %}
+		{% set avatar = entity.avatar %}
+	{% else %}
+		{% if entity.gender == 1 %}
+			{% set avatar = 'avatar_male.png' %}
+		{% elseif entity.gender == 2 %}
+			{% set avatar = 'avatar_female.png' %}
+		{% else %}
+			{% set avatar = 'avatar.png' %}
+		{% endif %}
+	{% endif %}
+	<img class="avatar {% if show == false %}table-avatar{% endif %} user-image" src="{{ asset(dir ~ avatar) | imagine_filter('xs') }}">
+{% endmacro %}
+
+{% macro boutonsActions(action=null) %}
+		<a href="{{ path('admin_action_show', { 'id': action.id }) }}" class="btn btn-primary btn-sm" data-toggle="tooltip" title="Afficher">
+			<i class="fa fa-eye"></i>
+		</a>
+
+		{% if is_granted('ROLE_CONVOYEUR') == false %}
+		  <a href="{{ path('admin_action_edit', { 'id': action.id }) }}" class="btn btn-warning btn-sm" data-toggle="tooltip" title="Modifier">
+			<i class="fa fa-pencil"></i>
+		  </a>
+		 {% if action.archiver %}
+			<a href="{{ path('admin_action_dearchiver', { 'id': action.id },1) }}" class="btn btn-success btn-sm" data-toggle="tooltip" title="Désarchiver"><i class="fa fa-archive"></i></a>
+		  {% else %}
+			<a href="{{ path('admin_action_archiver', { 'id': action.id },1) }}" class="btn btn-danger btn-sm" data-toggle="tooltip" title="Archiver"><i   class="fa fa-archive"></i></a>
+		  {% endif %}
+		  <a href="{{ path('admin_action_delete', { 'id': action.id }) }}" class="btn btn-danger btn-sm" data-toggle="confirmation" title="{{ 'actions.confirmation' | trans }}">
+			<i class="fa fa-trash"></i>
+		  </a>
+		{% endif %}
+{% endmacro %}
+{####### Photos #######}
+{# xs : 120
+sm : 250
+md : 500
+lg : 800
+xg : 1000 #}
+
+{% macro photo_xs(entityName, id, img, dir, css_class="img-thumbnail") %}
+	<a href="{{ path('admin_' ~ entityName ~ '_show', { 'id': id }) }}">
+		{% if img is empty %}
+			<img class="{{ entityName }} {{ css_class }}" src="{{ asset(dir ~ 'default.png') | imagine_filter('xs') }}">
+		{% else %}
+			<img  class="{{ entityName }} {{ css_class }}" src="{{ asset(dir ~ img) | imagine_filter('xs') }}">
+		{% endif %}
+	</a>
+{% endmacro %}
+
+{% macro photo__xs(img, dir, css_class="img-thumbnail") %}
+		{% if img is empty %}
+			<img class=" {{ css_class }}" src="{{ asset(dir ~ 'default.png') | imagine_filter('xs') }}">
+		{% else %}
+			<img class=" {{ css_class }}" src="{{ asset(dir ~ img) | imagine_filter('xs') }}">
+		{% endif %}
+{% endmacro %}
+
+{% macro photo_sm(img, dir, css_class="img-thumbnail") %}
+		{% if img is empty %}
+			<img class=" {{ css_class }}" src="{{ asset(dir ~ 'default.png') | imagine_filter('sm') }}">
+		{% else %}
+			<img class=" {{ css_class }}" src="{{ asset(dir ~ img) | imagine_filter('sm') }}">
+		{% endif %}
+{% endmacro %}
+
+{% macro photo_md(img, dir, css_class="img-thumbnail") %}
+
+		{% if img is empty %}
+			<img class="{{ css_class }} " src="{{ asset(dir ~ 'default.png') | imagine_filter('md') }}">
+		{% else %}
+			<img  class=" {{ css_class }}" src="{{ asset(dir ~ img) | imagine_filter('md') }}">
+		{% endif %}
+
+{% endmacro %}
+
+{% macro photo_lg(img, dir, css_class="img-thumbnail") %}
+
+		{% if img is empty %}
+			<img class=" {{ css_class }}" src="{{ asset(dir ~ 'default.png') | imagine_filter('lg') }}">
+		{% else %}
+			<img class=" {{ css_class }}" src="{{ asset(dir ~ img) | imagine_filter('lg') }}">
+		{% endif %}
+
+{% endmacro %}
+
+{% macro photo_xg(img, dir, css_class="img-thumbnail") %}
+
+		{% if img is empty %}
+			<img class=" {{ css_class }}" src="{{ asset(dir ~ 'default.png') | imagine_filter('xg') }}">
+		{% else %}
+			<img  class=" {{ css_class }}" src="{{ asset(dir ~ img) | imagine_filter('xg') }}">
+		{% endif %}
+
+{% endmacro %}
+
+{####### mobile #######}
+{% macro mobile(phone, secondPhone=null) %}
+	{% if phone is not empty %}
+		<a href="tel:{{phone}}">{{phone}}</a>
+	{% elseif secondPhone is not empty %}
+		<a href="tel:{{secondPhone}}">{{secondPhone}}</a>
+	{% else %}
+		--
+	{% endif %}
+{% endmacro %}
+
+{% macro formatedMobile(phone, secondPhone=null, divider=' ') %}
+	{% if phone is empty %}
+		{% if secondPhone is not empty %}
+			{% set phone = secondPhone %}
+		{% endif %}
+	{% endif %}
+
+	{% if phone is not empty %}
+		{% set phoneArray = phone|split('', 2) %}
+		{% set formated_phone = phoneArray|join(divider) %}
+		<a href="tel:{{phone}}">{{formated_phone}}</a>
+	{% else %}
+		--
+	{% endif %}
+{% endmacro %}

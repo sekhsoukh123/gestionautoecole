@@ -1,0 +1,133 @@
+{% extends 'base.html.twig' %}
+   {% form_theme form 'bootstrap_4_layout.html.twig' %}
+   {% trans_default_domain 'Candidat' %}
+
+   {% block title %}
+   <title>{{ 'candidat.new.title' | trans }} </title>
+
+   {% endblock %}
+{% block content_header %}
+
+<div class="content-header">
+  <div class="container-fluid">
+    <div class="row mb-2">
+      <div class="col-sm-6">
+        <h1 class="m-0 text-dark">{{ 'candidat.new.title' | trans }} </h1>
+
+      </div><!-- /.col -->
+      <div class="col-sm-6">
+        <ol class="breadcrumb float-sm-right">
+          <li class="breadcrumb-item"><a href="#">Home</a></li>
+          <li class="breadcrumb-item active">{{ 'candidat.new.title' | trans }} </li>
+        </ol>
+      </div><!-- /.col -->
+    </div><!-- /.row -->
+  </div><!-- /.container-fluid -->
+</div>
+
+{% endblock %}
+
+{% block content %}
+{{ form_start(form, {'attr': {'novalidate': 'novalidate'}}) }}
+
+<div class="row">
+         <div class="col-12">
+           <div class="card">
+             <div class="card-header">
+               <h3 class="card-title">Ajouter</h3>
+
+               <div class="card-tools">
+                 <div class="input-group input-group-sm" style="width: 150px;">
+                   <input type="text" name="table_search" class="form-control float-right" placeholder="Search">
+
+                   <div class="input-group-append">
+                     <button type="submit" class="btn btn-default"><i class="fas fa-search"></i></button>
+                   </div>
+                 </div>
+               </div>
+             </div>
+             <!-- /.card-header -->
+             <div class="card-body">
+             <div class="col-md-12">
+              {{ form_row(form.gender) }}
+             <div class="row">
+             <div class="col-md-6">
+             {{ form_row(form.carte_identite) }}
+
+             </div>
+             </div>
+
+             <div class="row">
+             <div class="col-md-6 ">{{ form_row(form.first_name) }}</div>
+             <div class="col-md-6 pull-right">{{ form_row(form.first_name_ar) }}</div>
+
+             </div>
+             <div class="row">
+
+             <div class="col-md-6">{{ form_row(form.last_name) }}</div>
+             <div class="col-md-6">{{ form_row(form.last_name_ar) }}</div>
+             </div>
+             <div class="row">
+                 <div class="col-md-6">{{ form_row(form.email) }}</div>
+                 <div class="col-md-3">{{ form_row(form.telephone1) }}</div>
+                 <div class="col-md-3">{{ form_row(form.telephone2) }}</div>
+             </div>
+             <div class="row">
+             </div>
+             <div class="row">
+                  <div class="col-md-3">{{ form_row(form.date_naissance) }}</div>
+                  <div class="col-md-3">{{ form_row(form.lieu_naissance) }}</div>
+                  <div class="col-md-3">{{ form_row(form.lieu_naissance_ar) }}</div>
+                  <div class="col-md-3">{{ form_row(form.pays_naissance) }}</div>
+              </div>
+                  <div class="row">
+                  <div class="col-md-6">{{ form_row(form.address) }}</div>
+                    <div class="col-md-6">{{ form_row(form.address_ar) }}</div>
+
+                  </div>
+                  <div class="row">
+                  <div class="col-md-3">{{ form_row(form.type_permis) }}</div>
+                  <div class="col-md-3">{{ form_row(form.job) }}</div>
+                  <div class="col-md-3">{{ form_row(form.prix) }}DH</div>
+              </div>
+              <div class="row">
+                 <div class="col-md-6">{{ form_row(form.numero_inscription) }}</div>
+                 <div class="col-md-6">{{ form_row(form.date_inscription) }}</div>
+                </div>
+                  <div class="row">
+                 <div class="col-md-6">{{ form_row(form.date_examen_theorique) }}</div>
+                   <div class="col-md-6">{{ form_row(form.date_examen_pratique) }}</div>
+                   </div>
+                    <div class="row">
+                  <div class="col-md-6">{{ form_row(form.date2_examen_theorique) }}</div>
+                  <div class="col-md-6">{{ form_row(form.date2_examen_pratique) }}</div>
+                 </div>
+                 <div class="row">
+                   <div class="col-md-3">{{ form_row(form.is_dossier) }}</div>
+                   <div class="col-md-3">{{ form_row(form.is_visite_medicale) }}</div>
+                   <div class="col-md-3">{{ form_row(form.is_succeeded) }}</div>
+
+
+                 </div>
+                 <div class="row">
+                 <div class="col-md-3">{{ form_row(form.photo) }}</div>
+                 
+                      <div class="col-md-3">{{ form_row(form.note) }}</div>
+                 </div>
+
+                 </div>
+                 </div>
+                 <div class="card-footer">
+                 <button type="submit" class="btn btn-success">{{ 'actions.valider' | trans  ({}, 'AppBundle')}}</button>
+                  <a href="{{ app.request.headers.get('referer') }}" class="btn btn-info">{{ 'actions.cancel' | trans  ({}, 'AppBundle')}}</a>
+                  <a href="{{ path('admin_candidat_index') }}" class="btn btn-warning pull-right">{{ 'actions.back_to_list' | trans ({}, 'AppBundle') }}</a>
+
+                 </div>
+                 <!-- /.card-body -->
+               </div>
+               <!-- /.card -->
+             </div>
+           </div>
+           {{ form_end(form, {'render_rest': false}) }}
+           <!-- /.row -->
+{% endblock %}

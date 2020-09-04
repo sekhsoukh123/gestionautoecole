@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" version="1.2">
+  <file source-language="fr" target-language="fr" datatype="plaintext" original="file.ext">
+    <header>
+      <tool tool-id="symfony" tool-name="Symfony"/>
+    </header>
+    <body>
+      <trans-unit id="lxGrHJG" resname="Ajouter candidat">
+        <source>Ajouter candidat</source>
+        <target>__Ajouter candidat</target>
+      </trans-unit>
+      <trans-unit id="VnUJcWJ" resname="emptyBox.title">
+        <source>emptyBox.title</source>
+        <target>Pas de résultat</target>
+      </trans-unit>
+      <trans-unit id="SgXVbPm" resname="actions.back_to_list">
+        <source>actions.back_to_list</source>
+        <target>Retourner à la liste</target>
+      </trans-unit>
+      <trans-unit id="n.9eLKE" resname="actions.update">
+        <source>actions.update</source>
+        <target>Modifier</target>
+      </trans-unit>
+      <trans-unit id="Jx1UbvO" resname="actions.delete">
+        <source>actions.delete</source>
+        <target>Supprimer</target>
+      </trans-unit>
+      <trans-unit id="KWmdQEv" resname="actions.valider">
+        <source>actions.valider</source>
+        <target>Valider</target>
+      </trans-unit>
+      <trans-unit id="6fYOPP1" resname="actions.cancel">
+        <source>actions.cancel</source>
+        <target>Annuler</target>
+      </trans-unit>
+      <trans-unit id="kQcvOtc" resname="actions.add">
+        <source>actions.add</source>
+        <target>Ajouter</target>
+      </trans-unit>
+      <trans-unit id="GyNiJAi" resname="menu.home">
+        <source>menu.home</source>
+        <target>Home</target>
+      </trans-unit>
+      <trans-unit id="FUuuDVB" resname="menu.candidat">
+        <source>menu.candidat</source>
+        <target>Candidats</target>
+      </trans-unit>
+      <trans-unit id="yKEhQ8q" resname="menu.candidat.index">
+        <source>menu.candidat.index</source>
+        <target>Liste des candidats</target>
+      </trans-unit>
+      <trans-unit id="BQVoEmK" resname="menu.candidat.new">
+        <source>menu.candidat.new</source>
+        <target>Ajouter un candidat</target>
+      </trans-unit>
+      <trans-unit id="7NiudT7" resname="menu.monitor">
+        <source>menu.monitor</source>
+        <target>Moniteurs</target>
+      </trans-unit>
+      <trans-unit id="lybrwRc" resname="menu.monitor.index">
+        <source>menu.monitor.index</source>
+        <target>Liste des moniteurs</target>
+      </trans-unit>
+      <trans-unit id="kwlXFUj" resname="menu.monitor.new">
+        <source>menu.monitor.new</source>
+        <target>Ajouter un moniteur</target>
+      </trans-unit>
+      <trans-unit id="MAUerRT" resname="menu.vehicule">
+        <source>menu.vehicule</source>
+        <target>Véhicules</target>
+      </trans-unit>
+      <trans-unit id="aZDRWsx" resname="menu.vehicule.index">
+        <source>menu.vehicule.index</source>
+        <target>Liste des véhicules</target>
+      </trans-unit>
+      <trans-unit id="V2PRmP0" resname="menu.vehicule.new">
+        <source>menu.vehicule.new</source>
+        <target>Ajouter un véhicule</target>
+      </trans-unit>
+      <trans-unit id="dyFgudY" resname="menu.employe">
+        <source>menu.employe</source>
+        <target>Employées</target>
+      </trans-unit>
+      <trans-unit id="QF7oWFW" resname="menu.employe.index">
+        <source>menu.employe.index</source>
+        <target>Liste des employée</target>
+      </trans-unit>
+      <trans-unit id="yXEfM0T" resname="menu.employe.new">
+        <source>menu.employe.new</source>
+        <target>Ajouter un employée</target>
+      </trans-unit>
+      <trans-unit id="menu.entreprise">
+        <source>menu.entreprise</source>
+        <target>Entreprises</target>
+      </trans-unit>
+      <trans-unit id="menu.entreprise.index">
+        <source>menu.entreprise.index</source>
+        <target>Liste des entreprises</target>
+      </trans-unit>
+      <trans-unit id="menu.entreprise.new">
+        <source>menu.entreprise.new</source>
+        <target>Ajouter un entreprise</target>
+      </trans-unit>
+      <trans-unit id="menu.depense">
+        <source>menu.depense</source>
+        <target>Dépenses</target>
+      </trans-unit>
+      <trans-unit id="menu.depense.index">
+        <source>menu.depense.index</source>
+        <target>Liste des dépenses</target>
+      </trans-unit>
+      <trans-unit id="menu.depense.new">
+        <source>menu.depense.new</source>
+        <target>Ajouter un dépense</target>
+      </trans-unit>
+      <trans-unit id="menu.revenue">
+        <source>menu.revenue</source>
+        <target>Revenues</target>
+      </trans-unit>
+      <trans-unit id="menu.revenue.index">
+        <source>menu.revenue.index</source>
+        <target>Liste des revenues</target>
+      </trans-unit>
+      <trans-unit id="menu.revenue.new">
+        <source>menu.revenue.new</source>
+        <target>Ajouter un revenue</target>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

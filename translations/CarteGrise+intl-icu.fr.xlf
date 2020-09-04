@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" version="1.2">
+  <file source-language="fr" target-language="fr" datatype="plaintext" original="file.ext">
+    <header>
+      <tool tool-id="symfony" tool-name="Symfony"/>
+    </header>
+    <body>
+      <trans-unit id="ikOcnxN" resname="carteGrise.label.montant">
+        <source>carteGrise.label.montant</source>
+        <target>Montant</target>
+      </trans-unit>
+      <trans-unit id="1BBccJR" resname="carteGrise.label.created">
+        <source>carteGrise.label.created</source>
+        <target>Date création</target>
+      </trans-unit>
+      <trans-unit id="80UlrxU" resname="carteGrise.label.updated">
+        <source>carteGrise.label.updated</source>
+        <target>Date modification</target>
+      </trans-unit>
+      <trans-unit id="FDCM.Tk" resname="carteGrise.label.date_debut">
+        <source>carteGrise.label.date_debut</source>
+        <target>Date début</target>
+      </trans-unit>
+      <trans-unit id="ZTstaLh" resname="carteGrise.label.date_fin">
+        <source>carteGrise.label.date_fin</source>
+        <target>Date Fin</target>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

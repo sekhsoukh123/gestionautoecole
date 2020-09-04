@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" version="1.2">
+  <file source-language="fr" target-language="fr" datatype="plaintext" original="file.ext">
+    <header>
+      <tool tool-id="symfony" tool-name="Symfony"/>
+    </header>
+    <body>
+      <trans-unit id="g7vE3Ri" resname="monitor.edit.title">
+        <source>monitor.edit.title</source>
+        <target>Modifier le moniteur</target>
+      </trans-unit>
+      <trans-unit id="XxeDYrR" resname="monitor.index.title">
+        <source>monitor.index.title</source>
+        <target>Liste des moniteurs</target>
+      </trans-unit>
+      <trans-unit id="zbZeY7W" resname="monitor.new.title">
+        <source>monitor.new.title</source>
+        <target>Ajouter un moniteur</target>
+      </trans-unit>
+      <trans-unit id="Eu9yccz" resname="monitor.show.title">
+        <source>monitor.show.title</source>
+        <target>Afficher le moniteur</target>
+      </trans-unit>
+      <trans-unit id="navhUSO" resname="monitor.label.gender">
+        <source>monitor.label.gender</source>
+        <target>Sexe</target>
+      </trans-unit>
+      <trans-unit id="dbk45pv" resname="gender.mal">
+        <source>gender.mal</source>
+        <target>Homme</target>
+      </trans-unit>
+      <trans-unit id="3Y4oCpI" resname="gender.female">
+        <source>gender.female</source>
+        <target>Femme</target>
+      </trans-unit>
+      <trans-unit id="zcqJhQB" resname="monitor.label.carte_identite">
+        <source>monitor.label.carte_identite</source>
+        <target>CIN</target>
+      </trans-unit>
+      <trans-unit id="m5Nte5G" resname="monitor.label.first_name">
+        <source>monitor.label.first_name</source>
+        <target>Prénom</target>
+      </trans-unit>
+      <trans-unit id="2RP9aQL" resname="monitor.label.last_name">
+        <source>monitor.label.last_name</source>
+        <target>Nom</target>
+      </trans-unit>
+      <trans-unit id="jY5gdwc" resname="monitor.label.date_naissance">
+        <source>monitor.label.date_naissance</source>
+        <target>Date naissance</target>
+      </trans-unit>
+      <trans-unit id="c4BcT1Z" resname="monitor.label.lieu_naissance">
+        <source>monitor.label.lieu_naissance</source>
+        <target>Lieu de naissance</target>
+      </trans-unit>
+      <trans-unit id="Y.x3I.m" resname="monitor.label.pays_naissance">
+        <source>monitor.label.pays_naissance</source>
+        <target>Pays</target>
+      </trans-unit>
+      <trans-unit id="EyBx73k" resname="monitor.label.address">
+        <source>monitor.label.address</source>
+        <target>Adresse</target>
+      </trans-unit>
+      <trans-unit id="FCOevze" resname="monitor.label.email">
+        <source>monitor.label.email</source>
+        <target>Email</target>
+      </trans-unit>
+      <trans-unit id="giBOOVa" resname="monitor.label.telephone1">
+        <source>monitor.label.telephone1</source>
+        <target>Téléphone1</target>
+      </trans-unit>
+      <trans-unit id="6TpcHAy" resname="monitor.label.telephone2">
+        <source>monitor.label.telephone2</source>
+        <target>Téléphone2</target>
+      </trans-unit>
+      <trans-unit id="ch4VrFA" resname="monitor.label.created">
+        <source>monitor.label.created</source>
+        <target>Date Création</target>
+      </trans-unit>
+      <trans-unit id="dcsDN_q" resname="monitor.label.label.updated">
+        <source>monitor.label.label.updated</source>
+        <target>Date modification</target>
+      </trans-unit>
+      <trans-unit id="VnUJcWJ" resname="emptyBox.title">
+        <source>emptyBox.title</source>
+        <target>Pas de resultat</target>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

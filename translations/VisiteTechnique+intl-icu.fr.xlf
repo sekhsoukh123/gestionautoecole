@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" version="1.2">
+  <file source-language="fr" target-language="fr" datatype="plaintext" original="file.ext">
+    <header>
+      <tool tool-id="symfony" tool-name="Symfony"/>
+    </header>
+    <body>
+      <trans-unit id="9x7.gbY" resname="visiteTechnique.label.montant">
+        <source>visiteTechnique.label.montant</source>
+        <target>Montant</target>
+      </trans-unit>
+      <trans-unit id="DG7YYvQ" resname="visiteTechnique.label.created">
+        <source>visiteTechnique.label.created</source>
+        <target>Date création</target>
+      </trans-unit>
+      <trans-unit id="YBg0GcV" resname="visiteTechnique.label.updated">
+        <source>visiteTechnique.label.updated</source>
+        <target>Date modification</target>
+      </trans-unit>
+      <trans-unit id="e3fmw0N" resname="visiteTechnique.label.date_debut">
+        <source>visiteTechnique.label.date_debut</source>
+        <target>Date début</target>
+      </trans-unit>
+      <trans-unit id="vwh0N3P" resname="visiteTechnique.label.date_fin">
+        <source>visiteTechnique.label.date_fin</source>
+        <target>Date Fin</target>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

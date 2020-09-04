@@ -1,0 +1,217 @@
+{% extends "base.html.twig" %}
+
+{% trans_default_domain 'Employe' %}
+
+
+{% block title %}
+<title>{{ 'employe.show.title' | trans }} | {{ parent() }}</title>
+
+{% endblock %}
+
+{% block content_header %}
+
+<div class="content-header">
+  <div class="container-fluid">
+    <div class="row mb-2">
+      <div class="col-sm-6">
+        <h1 class="m-0 text-dark">{{ 'employe.show.title' | trans }} </h1>
+
+      </div><!-- /.col -->
+      <div class="col-sm-6">
+        <ol class="breadcrumb float-sm-right">
+          <li class="breadcrumb-item"><a href="#">Home</a></li>
+          <li class="breadcrumb-item"><a href="{{ path('admin_employe_index') }}">Moniteurs</a></li>
+          <li class="breadcrumb-item active"> {{ employe.id | trans}}</li>
+        </ol>
+      </div><!-- /.col -->
+    </div><!-- /.row -->
+  </div><!-- /.container-fluid -->
+</div>
+
+{% endblock %}
+
+
+{% block content %}
+
+
+    <div class="row">
+      <div class="col-12">
+        <!-- Custom Tabs -->
+        <div class="card">
+          <div class="card-header d-flex p-0">
+
+            <ul class="nav nav-pills p-2">
+              <li class="nav-item"><a class="nav-link active" href="#tab_1" data-toggle="tab">Coordonnées</a></li>
+              <li class="nav-item"><a class="nav-link" href="#tab_2" data-toggle="tab">Compte</a></li>
+              {# <li class="nav-item"><a class="nav-link" href="#tab_3" data-toggle="tab">Paiement</a></li> #}
+
+            </ul>
+          </div><!-- /.card-header -->
+          <div class="card-body">
+            <div class="box-header with-border">
+              <a href="{{ path('admin_employe_index') }}" class="btn btn-sm btn-primary">
+            		<i class="fa fa-reply" aria-hidden="true"></i>
+            		{{ 'actions.back_to_list' | trans({}, 'AppBundle') }}
+            	</a>
+              <div class="pull-right">
+              <a href="{{ path('admin_employe_edit', { 'id': employe.id }) }}" class="btn btn-sm btn-warning" data-toggle="tooltip" title="{{ 'actions.update' | trans({}, 'AppBundle') }}">
+                <i class="fa fa-pencil"> </i>  <span class="hidden-xs hidden-sm"> {{ 'actions.update' | trans ({}, 'AppBundle') }}</span>
+              </a>
+              <a href="{{ path('admin_employe_delete', { 'id': employe.id }) }}" class="btn btn-sm btn-danger" data-toggle="tooltip" title="{{ 'actions.delete' | trans({}, 'AppBundle') }}">
+                <i class="fa fa-trash-o"> </i>  <span class="hidden-xs hidden-sm"> {{ 'actions.delete' | trans ({}, 'AppBundle') }}</span>
+              </a>
+
+
+              </div>
+              </div>
+
+      <!-- /.tab-content -->
+            <div class="tab-content">
+
+                <!-- /.tab-pane -->
+              <div class="tab-pane active" id="tab_1">
+              <div class="line line-right">
+              {% if employe.photo is not empty %}
+
+            <a href="{{ path('admin_employe_show', { 'id': employe.id }) }}">
+            <img  class="" src="{{ asset('uploads/images/employe/' ~ employe.photo)}}"  />
+            </a>
+            {% else %}
+              <img  class="" src="{{ asset('uploads/images/user.png')}}"  />
+
+
+          {% endif %}
+                </div>
+              <div class="row">
+
+      <div class="col-sm table-responsive">
+          <table class="table">
+          <tbody>
+            <tr>
+            <tr>
+              <th>{{ 'employe.label.service' | trans }}</th>
+              <td>{{ employe.type | default("--")}}</td>
+            </tr>
+            <th style="width:30%">{{ 'employe.label.gender' | trans }}</th>
+            {% if employe.gender == 1 %}
+            <td>{{ 'gender.mal' | trans}}</td>
+           {% else %}
+            <td>{{ 'gender.female' | trans}}</td>
+          {% endif %}
+              <th style="width:30%">{{ 'employe.label.carte_identite' | trans }}</th>
+              <td>{{ employe.carteIdentite}}</td>
+           </tr>
+           <tr>
+          <th>{{ 'employe.label.first_name' | trans }}</th>
+          <td>{{ employe.firstName}}</td>
+          </tr>
+            <tr>
+              <th>{{ 'employe.label.last_name' | trans }}</th>
+              <td>{{ employe.lastName}}</td>
+            </div>
+
+        <tr>
+          <th>{{ 'employe.label.date_naissance' | trans }}</th>
+          <td>{{ employe.dateNaissance  | date('d/m/Y')}}</td>
+
+          <th>{{ 'employe.label.lieu_naissance' | trans }}</th>
+          <td>{{ employe.lieuNaissance | default("France")}}</td>
+        </tr>
+        <tr>
+          <th>{{ 'employe.label.pays_naissance' | trans }}</th>
+          <td>{{ employe.paysNaissance | default("--")}}</td>
+        </tr>
+        <tr>
+          <th>{{ 'employe.label.address' | trans }}</th>
+          <td>{{ employe.address | default("--")}}</td>
+        </tr>
+
+        <tr>
+          <th>{{ 'employe.label.email' | trans }}</th>
+          <td>{{ employe.email}}</td>
+        </tr>
+        <tr>
+          <th>{{ 'employe.label.telephone1' | trans }}</th>
+          <td>{{ employe.telephone1 }}</td>
+
+          <th>{{ 'employe.label.telephone2' | trans }}</th>
+          <td>{{ employe.telephone2 }}</td>
+        </tr>
+
+
+
+
+
+
+          <tr>
+            <th>{{ 'employe.label.created' | trans }}</th>
+            <td>{{ employe.created | date('d/m/Y H:i')}}</td>
+
+            <th>{{ 'employe.label.label.updated' | trans }}</th>
+            <td>{{ employe.updated | date('d/m/Y H:i')}}</td>
+          </tr>
+
+    </tbody>
+</table>
+</div>
+
+</div>
+
+
+
+</div>
+                <!-- /.tab-pane -->
+              <!-- .tab-pane -->
+              <div class="tab-pane" id="tab_2">
+              <div class="line">
+                                    <strong class="line-title">{{ 'employe.account' | trans }}</strong>
+                                    {% if employe.user is not empty %}
+                                        <p class="line-body">
+                                            <b>{{ 'user.labels.username' | trans }} : </b> {{ employe.user.username }}<br>
+                                            <b>{{ 'user.labels.email' | trans }} : </b> {{ employe.user.email }}<br>
+                                            <b>{{ 'user.labels.roles.label' | trans }} : </b> {{ employe.user.roles |join(', ') }}<br>
+                                        </p>
+                                        <p class="link-right">
+                                        {# <a href="{{ path('admin_user_new' , {'employe_id':employe.id}) }}" class="btn btn-sm btn-primary">
+                                      Modifier le compte
+                                      </a> #}
+                                        </p>
+                                    {% else %}
+                                        <p class="line-body">
+                                            {{ 'employe.account.empty' | trans }}
+                                        </p>
+                                        <p class="link-right">
+
+                                        <a href="{{ path('admin_user_new' , {'employe_id':employe.id}) }}" class="btn btn-sm btn-primary">
+                                        associée un compte
+                                        </a>
+                                        </p>
+                                    {% endif %}
+                                </div>
+
+              </div>
+              <!-- /.tab-pane -->
+
+  <!-- .tab-pane -->
+              {# <div class="tab-pane" id="tab_3">
+
+
+
+
+              </div> #}
+              <!-- /.tab-pane -->
+            </div>
+            <!-- /.tab-content -->
+
+          </div><!-- /.card-body -->
+        </div>
+        <!-- ./card -->
+      </div>
+      <!-- /.col -->
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+
+        </div>
+    </div>
+{% endblock %}

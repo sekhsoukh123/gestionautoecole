@@ -1,0 +1,66 @@
+.empty-box {
+	clear: both;
+	text-align: center;
+	padding: 20px;
+	min-height: 200px;
+}
+.empty-box p {
+	font-size: 2em;
+	color: #aaa;
+}
+.empty-box.sm p {
+	font-size: 1.3em;
+}
+.empty-box i {
+	font-size: 8em;
+	color: #bbb;
+}
+.empty-box.sm i {
+	font-size: 5em;
+}
+.empty-box .actions {
+	color: #888;
+}
+.empty-box .btn-default {
+	color: #666;
+}
+.empty-box .actions form {
+	text-align: center;
+}
+.empty-box .actions input {
+	max-width: 400px;
+	margin: 25px auto !important;
+	float: none !important;
+}
+.empty-box .actions button {
+	float: none !important;
+}
+
+.imagine{
+  border-radius: 50%;
+  float: left;
+  width: 40px;
+  height: 40px;
+}
+
+.line-right {
+	float: right !important;
+	/* margin: -11px -10px 0 0; */
+	padding: 0 !important;
+	width: 164px;
+	height: 164px;
+	line-height: 164px;
+	background-color: #fff;
+	text-align: center;
+	border: 1px solid #eee;
+}
+.line-right img {
+	overflow: hidden;
+	box-shadow: 0 0 3px #ecf0f5;
+	max-height: 128px;
+	max-width: 128px;
+}
+.line {
+    border-bottom: 1px solid #eee;
+    padding: 5px;
+}

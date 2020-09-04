@@ -1,0 +1,119 @@
+{% extends 'base.html.twig' %}
+{% trans_default_domain 'Entreprise' %}
+{% block title %}
+<title>{{ 'entreprise.index.title' | trans }}</title>
+
+{% endblock %}
+{% block content_header %}
+
+<div class="content-header">
+  <div class="container-fluid">
+    <div class="row mb-2">
+      <div class="col-sm-6">
+        <h1 class="m-0 text-dark">{{ 'entreprise.index.title' | trans }}</h1>
+
+      </div><!-- /.col -->
+      <div class="col-sm-6">
+        <ol class="breadcrumb float-sm-right">
+          <li class="breadcrumb-item"><a href="#">Home</a></li>
+          <li class="breadcrumb-item active">{{ 'entreprise.index.title' | trans }}</li>
+        </ol>
+      </div><!-- /.col -->
+    </div><!-- /.row -->
+  </div><!-- /.container-fluid -->
+</div>
+
+{% endblock %}
+
+{% block content %}
+<div class="row">
+
+
+
+         <div class="col-12">
+           <div class="card">
+             <div class="card-header">
+
+               <div class="box-actions">
+                   <a href="{{ path('admin_entreprise_new') }}" class="btn btn-primary">
+                       {{ 'entreprise.new.title' | trans() }}
+                   </a>
+
+               </div>
+               <div class="card-tools">
+
+                 <div class="input-group input-group-sm" style="width: 150px;">
+                   <input type="text" name="table_search" class="form-control float-right" placeholder="Search">
+
+                   <div class="input-group-append">
+                     <button type="submit" class="btn btn-default"><i class="fas fa-search"></i></button>
+                   </div>
+                 </div>
+               </div>
+             </div>
+             <!-- /.card-header -->
+                {% if entreprises is not empty %}
+             <div class="card-body table-responsive p-0">
+               <table class="table table-hover text-nowrap">
+                 <thead>
+                   <tr>
+                     <th>Nom</th>
+                     <th>Directeur</th>
+                     <th>Numéro de licence</th>
+                     <th>Ville</th>
+                     <th>Téléphone</th>
+
+                     <th>Actions</th>
+                   </tr>
+                 </thead>
+                 <tbody>
+                 {% for entreprise in entreprises %}
+                 <tr>
+
+                 <td  class="hidden-xs hidden-sm"><a href="#">{{ entreprise.name | default("--") }}</a></td>
+                 <td><a class="gras" href="#">{{entreprise.directeurName | default("--")}}</a>
+                 </td>
+                 <td><a class="gras" href="#">{{entreprise.numLicence | default("--")}}</a>
+                 </td>
+                 <td><a class="gras" href="#">{{entreprise.ville | default("--")}}</a>
+                 </td>
+                 <td  class="hidden-xs hidden-sm">
+                     {{ entreprise.telephone1 | default("--") }}
+                 </td>
+                 <td  class="hidden-xs hidden-sm"> {{entreprise.email | default("--")}}  </td>
+
+                 <td>
+                    <a href="{{ path('admin_entreprise_show', { 'id': entreprise.id }) }}" class="btn btn-primary btn-sm" data-toggle="tooltip" title="Afficher">
+                   		<i class="fa fa-eye"></i>
+                   	</a>
+                    <a href="{{ path('admin_entreprise_edit', { 'id': entreprise.id }) }}" class="btn btn-warning btn-sm" data-toggle="tooltip" title="Modifier">
+                   		<i class="fa fa-pencil-square-o"></i>
+                   	</a>
+                   	<a href="{{ path('admin_entreprise_delete', { 'id': entreprise.id }) }}" class="btn btn-danger btn-sm" >
+                   		<i class="fa fa-trash-o"></i>
+                   	</a>
+
+                 </td>
+                 </tr>
+
+                     {% endfor %}
+                 </tbody>
+               </table>
+             </div>
+             {% else %}
+               <div class="empty-box">
+                 <i class="fa fa-frown-o" aria-hidden="true"></i>
+                 <p>{{ 'emptyBox.title' | trans ({}, 'AppBundle')}}</p>
+                <a href="{{ path('admin_entreprise_new') }}" class="btn btn-primary btn-sm">
+                    {{ 'entreprise.new.title' | trans }}
+                </a>
+
+               </div>
+      {% endif %}
+             <!-- /.card-body -->
+           </div>
+           <!-- /.card -->
+         </div>
+       </div>
+       <!-- /.row -->
+{% endblock %}

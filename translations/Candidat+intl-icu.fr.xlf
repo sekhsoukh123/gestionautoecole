@@ -1,0 +1,222 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" version="1.2">
+  <file source-language="fr" target-language="fr" datatype="plaintext" original="file.ext">
+    <header>
+      <tool tool-id="symfony" tool-name="Symfony"/>
+    </header>
+    <body>
+      <trans-unit id="t20EKat" resname="candidat.show.title">
+        <source>candidat.show.title</source>
+        <target>Afficher le candidat</target>
+      </trans-unit>
+      <trans-unit id="R1tB.KK" resname="candidat.label.gender.label">
+        <source>candidat.label.gender.label</source>
+        <target>Sexe</target>
+      </trans-unit>
+      <trans-unit id="dbk45pv" resname="gender.mal">
+        <source>gender.mal</source>
+        <target>Homme</target>
+      </trans-unit>
+      <trans-unit id="3Y4oCpI" resname="gender.female">
+        <source>gender.female</source>
+        <target>Femme</target>
+      </trans-unit>
+      <trans-unit id="W8lNNLN" resname="candidat.first_name">
+        <source>candidat.first_name</source>
+        <target>__candidat.first_name</target>
+      </trans-unit>
+      <trans-unit id="bHAx73P" resname="candidat.last_name">
+        <source>candidat.last_name</source>
+        <target>__candidat.last_name</target>
+      </trans-unit>
+      <trans-unit id="LTLLj73" resname="candidat.email">
+        <source>candidat.email</source>
+        <target>__candidat.email</target>
+      </trans-unit>
+      <trans-unit id="HN4ocJ4" resname="candidat.telephone1">
+        <source>candidat.telephone1</source>
+        <target>__candidat.telephone1</target>
+      </trans-unit>
+      <trans-unit id="qf.Ibn8" resname="candidat.telephone2">
+        <source>candidat.telephone2</source>
+        <target>__candidat.telephone2</target>
+      </trans-unit>
+      <trans-unit id="3IRNXvu" resname="candidat.lieu_naissance">
+        <source>candidat.lieu_naissance</source>
+        <target>__candidat.lieu_naissance</target>
+      </trans-unit>
+      <trans-unit id="uR6UDut" resname="candidat.pays_naissance">
+        <source>candidat.pays_naissance</source>
+        <target>__candidat.pays_naissance</target>
+      </trans-unit>
+      <trans-unit id="g2zm0QD" resname="candidat.date_naissance">
+        <source>candidat.date_naissance</source>
+        <target>__candidat.date_naissance</target>
+      </trans-unit>
+      <trans-unit id="v39.BDJ" resname="candidat.labels.created">
+        <source>candidat.labels.created</source>
+        <target>__candidat.labels.created</target>
+      </trans-unit>
+      <trans-unit id="tW6H7rd" resname="candidat.labels.updated">
+        <source>candidat.labels.updated</source>
+        <target>__candidat.labels.updated</target>
+      </trans-unit>
+      <trans-unit id=".1tzDeS" resname="candidat.edit.title">
+        <source>candidat.edit.title</source>
+        <target>Modifier le candidat</target>
+      </trans-unit>
+      <trans-unit id="R39j4Cr" resname="candidat.index.title">
+        <source>candidat.index.title</source>
+        <target>Liste des candidats</target>
+      </trans-unit>
+      <trans-unit id="jsyFJEO" resname="candidat.new.title">
+        <source>candidat.new.title</source>
+        <target>Ajouter un candidat</target>
+      </trans-unit>
+      <trans-unit id="GcK_EF8" resname="candidat.label.gender">
+        <source>candidat.label.gender</source>
+        <target>Sexe</target>
+      </trans-unit>
+      <trans-unit id="bF3_4to" resname="candidat.label.created">
+        <source>candidat.label.created</source>
+        <target>Date création</target>
+      </trans-unit>
+      <trans-unit id="sKgvnbF" resname="candidat.label.first_name">
+        <source>candidat.label.first_name</source>
+        <target>Prénom</target>
+      </trans-unit>
+      <trans-unit id="9qsHXVj" resname="candidat.label.last_name">
+        <source>candidat.label.last_name</source>
+        <target>Nom</target>
+      </trans-unit>
+      <trans-unit id="yPaYRd1" resname="candidat.label.email">
+        <source>candidat.label.email</source>
+        <target>Email</target>
+      </trans-unit>
+      <trans-unit id="IzhDDYH" resname="candidat.label.telephone1">
+        <source>candidat.label.telephone1</source>
+        <target>Téléphone 1</target>
+      </trans-unit>
+      <trans-unit id="kIrBV5Q" resname="candidat.label.telephone2">
+        <source>candidat.label.telephone2</source>
+        <target>Télephone 2</target>
+      </trans-unit>
+      <trans-unit id="xFSfeBH" resname="candidat.label.lieu_naissance">
+        <source>candidat.label.lieu_naissance</source>
+        <target>Lieu de Naissance</target>
+      </trans-unit>
+      <trans-unit id="Iqw7K16" resname="candidat.label.pays_naissance">
+        <source>candidat.label.pays_naissance</source>
+        <target>Pays de naissance</target>
+      </trans-unit>
+      <trans-unit id="iEECyb4" resname="candidat.label.date_naissance">
+        <source>candidat.label.date_naissance</source>
+        <target>Date Naissance</target>
+      </trans-unit>
+      <trans-unit id="RNZnkuo" resname="candidat.label.updated">
+        <source>candidat.label.updated</source>
+        <target>Date modification</target>
+      </trans-unit>
+      <trans-unit id="BGwr2jI" resname="candidat.label.carte_identite">
+        <source>candidat.label.carte_identite</source>
+        <target>CIN</target>
+      </trans-unit>
+      <trans-unit id="o.8Alu2" resname="candidat.label.address">
+        <source>candidat.label.address</source>
+        <target>Adresse</target>
+      </trans-unit>
+      <trans-unit id="RkEZl_3" resname="candidat.label.job">
+        <source>candidat.label.job</source>
+        <target>Proffession</target>
+      </trans-unit>
+      <trans-unit id="dC48F0l" resname="actions.confirmation">
+        <source>actions.confirmation</source>
+        <target>confirmer</target>
+      </trans-unit>
+      <trans-unit id="Yw3hJru" resname="candidat.label.numero_inscription">
+        <source>candidat.label.numero_inscription</source>
+        <target>Numéro d'inscription</target>
+      </trans-unit>
+      <trans-unit id="9lmoPTx" resname="candidat.label.date_inscription">
+        <source>candidat.label.date_inscription</source>
+        <target>Date d'inscription</target>
+      </trans-unit>
+      <trans-unit id="h_CkZGx" resname="candidat.label.date_examen_theorique">
+        <source>candidat.label.date_examen_theorique</source>
+        <target>Date examen théorique </target>
+      </trans-unit>
+      <trans-unit id="1dblcfz" resname="candidat.label.date_examen_pratique">
+        <source>candidat.label.date_examen_pratique</source>
+        <target>Date examen pratique</target>
+      </trans-unit>
+      <trans-unit id="YBGN0Pn" resname="candidat.label.date2_examen_theorique">
+        <source>candidat.label.date2_examen_theorique</source>
+        <target>Date deuxième examen théorique </target>
+      </trans-unit>
+      <trans-unit id="lGH9aXB" resname="candidat.label.date2_examen_pratique">
+        <source>candidat.label.date2_examen_pratique</source>
+        <target>Date deuxième examen pratique </target>
+      </trans-unit>
+      <trans-unit id="candidat.label.date_debut_theorique">
+        <source>candidat.label.date_debut_theorique</source>
+        <target>Date debut théorique </target>
+      </trans-unit>
+      <trans-unit id="candidat.label.date_debut_pratique">
+        <source>candidat.label.date_debut_pratique</source>
+        <target>Date debut pratique </target>
+      </trans-unit>
+      <trans-unit id="ZZYDhaT" resname="candidat.label.prix">
+        <source>candidat.label.prix</source>
+        <target>Le prix convenu</target>
+      </trans-unit>
+      <trans-unit id="1Ljo8AH" resname="candidat.label.type_permis">
+        <source>candidat.label.type_permis</source>
+        <target>Type permis</target>
+      </trans-unit>
+      <trans-unit id="oFo7ijA" resname="candidat.label.is_dossier">
+        <source>candidat.label.is_dossier</source>
+        <target>Frais de dossier 50 Dh?</target>
+      </trans-unit>
+      <trans-unit id="SJkvxF3" resname="candidat.label.is_visite_medicale">
+        <source>candidat.label.is_visite_medicale</source>
+        <target>Frais de la visite médicale 150Dh ?</target>
+      </trans-unit>
+      <trans-unit id="L4eqSsU" resname="candidat.label.is_succeeded">
+        <source>candidat.label.is_succeeded</source>
+        <target>At-il réussi?</target>
+      </trans-unit>
+      <trans-unit id=".vlaU.x" resname="candidat.label.note">
+        <source>candidat.label.note</source>
+        <target>Note</target>
+      </trans-unit>
+      <trans-unit id="589WdAZ" resname="candidat.label.first_name_ar">
+        <source>candidat.label.first_name_ar</source>
+        <target>الاسم الشخصي</target>
+      </trans-unit>
+      <trans-unit id="whfqTvQ" resname="candidat.label.last_name_ar">
+        <source>candidat.label.last_name_ar</source>
+        <target>الاسم العائلي</target>
+      </trans-unit>
+      <trans-unit id="rjJB2.i" resname="candidat.label.address_ar">
+        <source>candidat.label.address_ar</source>
+        <target>العنوان</target>
+      </trans-unit>
+      <trans-unit id="qmXhUkA" resname="candidat.label.lieu_naissance_ar">
+        <source>candidat.label.lieu_naissance_ar</source>
+        <target>مكان الازدياد</target>
+      </trans-unit>
+      <trans-unit id="aHXbNHN" resname="cpayment.new.title">
+        <source>cpayment.new.title</source>
+        <target>Ajouter un Paiement</target>
+      </trans-unit>
+      <trans-unit id="candidat.label.photo" resname="candidat.label.photo">
+        <source>candidat.label.photo</source>
+        <target>Photo</target>
+      </trans-unit>
+      <trans-unit id="VnUJcWJ" resname="emptyBox.title">
+        <source>emptyBox.title</source>
+        <target>Pas de resultat</target>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

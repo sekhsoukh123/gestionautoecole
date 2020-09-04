@@ -1,0 +1,379 @@
+{% extends "base.html.twig" %}
+
+{% trans_default_domain 'Candidat' %}
+
+
+{% block title %}
+<title>{{ 'candidat.show.title' | trans }} | {{ parent() }}</title>
+
+{% endblock %}
+
+{% block content_header %}
+
+<div class="content-header">
+  <div class="container-fluid">
+    <div class="row mb-2">
+      <div class="col-sm-6">
+        <h1 class="m-0 text-dark">{{ 'candidat.show.title' | trans }} </h1>
+
+      </div><!-- /.col -->
+      <div class="col-sm-6">
+        <ol class="breadcrumb float-sm-right">
+          <li class="breadcrumb-item"><a href="#">Home</a></li>
+          <li class="breadcrumb-item"><a href="{{ path('admin_candidat_index') }}">{{ 'candidat.index.title' | trans }} </a></li>
+          <li class="breadcrumb-item active"> {{ candidat.id | trans}}</li>
+        </ol>
+      </div><!-- /.col -->
+    </div><!-- /.row -->
+  </div><!-- /.container-fluid -->
+</div>
+
+{% endblock %}
+
+
+{% block content %}
+
+
+    <div class="row">
+      <div class="col-12">
+        <!-- Custom Tabs -->
+        <div class="card">
+          <div class="card-header d-flex p-0">
+
+            <ul class="nav nav-pills p-2">
+              <li class="nav-item"><a class="nav-link active" href="#tab_1" data-toggle="tab">Coordonnées</a></li>
+              <li class="nav-item"><a class="nav-link" href="#tab_2" data-toggle="tab">Examen</a></li>
+              <li class="nav-item"><a class="nav-link" href="#tab_3" data-toggle="tab">Paiement</a></li>
+
+            </ul>
+          </div><!-- /.card-header -->
+          <div class="card-body">
+            <div class="box-header with-border">
+              <a href="{{ path('admin_candidat_index') }}" class="btn btn-sm btn-primary">
+            		<i class="fa fa-reply" aria-hidden="true"></i>
+            		{{ 'actions.back_to_list' | trans({}, 'AppBundle') }}
+            	</a>
+              <div class="pull-right">
+              <a href="{{ path('admin_candidat_contrat', { 'id': candidat.id }) }}" class="btn btn-primary btn-sm" target="_blank">
+                <i class="fa fa-download"></i>Contrat de formation
+              </a>
+              <a href="{{ path('admin_candidat_pdf', { 'id': candidat.id }) }}" class="btn btn-primary btn-sm" target="_blank">
+                <i class="fa fa-download"></i>Certificat de fin de formation
+              </a>
+              <a href="{{ path('admin_candidat_edit', { 'id': candidat.id }) }}" class="btn btn-sm btn-warning" data-toggle="tooltip" title="{{ 'actions.update' | trans({}, 'AppBundle') }}">
+                <i class="fa fa-pencil"> </i>  <span class="hidden-xs hidden-sm"> {{ 'actions.update' | trans ({}, 'AppBundle') }}</span>
+              </a>
+              <a href="{{ path('admin_candidat_delete', { 'id': candidat.id }) }}" class="btn btn-sm btn-danger" data-toggle="tooltip" title="{{ 'actions.delete' | trans({}, 'AppBundle') }}">
+                <i class="fa fa-trash-o"> </i>  <span class="hidden-xs hidden-sm"> {{ 'actions.delete' | trans ({}, 'AppBundle') }}</span>
+              </a>
+
+              </div>
+              </div>
+
+      <!-- /.tab-content -->
+            <div class="tab-content">
+
+                <!-- /.tab-pane -->
+              <div class="tab-pane active" id="tab_1">
+              <div class="line line-right">
+              {% if candidat.photo is not empty %}
+
+            <a href="{{ path('admin_candidat_show', { 'id': candidat.id }) }}">
+            <img    src="{{ asset('uploads/images/candidat/' ~ candidat.photo)}}"  />
+            </a>
+            {% else %}
+              <img  src="{{ asset('uploads/images/user.png')}}"  />
+
+
+            {% endif %}
+                </div>
+              <div class="row">
+                                  <div class="col-sm table-responsive">
+                                      <table class="table">
+                                      <tbody>
+
+
+                                  <tr>
+                                      <th>{{ 'candidat.label.first_name' | trans }}</th>
+                                      <td>{{ candidat.firstName}}</td>
+                                      <th class="float-right">{{ 'candidat.label.first_name_ar' | trans }}</th>
+
+                                      <td class="float-right">{{ candidat.firstNameAr | default('غير متوفر')}}</td>
+                                    </tr>
+
+                                    <tr>
+                                      <th>{{ 'candidat.label.last_name' | trans }}</th>
+                                      <td>{{ candidat.lastName}}</td>
+                                      <th class="float-right">{{ 'candidat.label.last_name_ar' | trans }}</th>
+
+                                      <td class="float-right">{{ candidat.lastNameAr | default('غير متوفر')}}</td>
+                                    </tr>
+
+
+                                    <tr>
+                                      <th>{{ 'candidat.label.date_naissance' | trans }}</th>
+                                      <td>{{ candidat.dateNaissance  | date('d/m/Y')}}</td>
+
+
+                                    </tr>
+                                    <tr>
+                                    <th>{{ 'candidat.label.lieu_naissance' | trans }}</th>
+                                    <td>{{ candidat.lieuNaissance | default("France")}}</td>
+                                    <th class="float-right">{{ 'candidat.label.lieu_naissance_ar' | trans }}</th>
+
+                                    <td class=" float-right">{{ candidat.lieuNaissanceAr | default('غير متوفر')}}</td>
+                                    </tr>
+                                    <tr>
+                                      <th>{{ 'candidat.label.pays_naissance' | trans }}</th>
+                                      <td>{{ candidat.paysNaissance | default("--")}}</td>
+                                    </tr>
+                                    <tr>
+                                      <th>{{ 'candidat.label.address' | trans }}</th>
+                                      <td>{{ candidat.address | default("--")}}</td>
+                                      <th class="float-right">{{ 'candidat.label.address_ar' | trans }}</th>
+
+                                      <td class="float-right">{{ candidat.addressAr | default('غير متوفر')}}</td>
+                                    </tr>
+
+                                    <tr>
+                                      <th>{{ 'candidat.label.email' | trans }}</th>
+                                      <td>{{ candidat.email}}</td>
+                                    </tr>
+                                    <tr>
+                                      <th>{{ 'candidat.label.telephone1' | trans }}</th>
+                                      <td>{{ candidat.telephone1 }}</td>
+
+                                      <th>{{ 'candidat.label.telephone2' | trans }}</th>
+                                      <td>{{ candidat.telephone2 }}</td>
+                                    </tr>
+                                    <tr>
+                                      <th>{{ 'candidat.label.type_permis' | trans }}</th>
+                                      <td>{{ candidat.typePermis }}</td>
+
+                                    </tr>
+                                    <tr>
+                                      <th>{{ 'candidat.label.prix' | trans }}</th>
+                                      <td>{{ candidat.prix }} DH</td>
+
+                                    </tr>
+                                    <tr>
+                                      <th>{{ 'candidat.label.job' | trans }}</th>
+                                      <td>{{ candidat.job }}</td>
+
+                                    </tr>
+
+
+
+                                      <tr>
+                                        <th>{{ 'candidat.label.created' | trans }}</th>
+                                        <td>{{ candidat.created | date('d/m/Y H:i')}}</td>
+
+                                        <th>{{ 'candidat.label.updated' | trans }}</th>
+                                        <td>{{ candidat.updated | date('d/m/Y H:i')}}</td>
+                                      </tr>
+
+                                </tbody>
+                            </table>
+                        </div>
+
+                    </div>
+
+
+
+              </div>
+                <!-- /.tab-pane -->
+              <!-- .tab-pane -->
+              <div class="tab-pane" id="tab_2">
+
+
+              <div class="row">
+                            <div class="col-sm table-responsive">
+                              <table class="table">
+                              <tbody>
+                              <tr>
+                                <th style="width:30%">{{ 'candidat.label.numero_inscription' | trans }}</th>
+                                <td>{{ candidat.numeroInscription}}</td>
+                              </tr>
+                              <tr>
+                              <th>{{ 'candidat.label.date_debut_theorique' | trans }}</th>
+                              <td>{{ candidat.dateDebutTheorique | date('d/m/Y')}}</td>
+                            </tr>
+                            <tr>
+                            <th>{{ 'candidat.label.date_debut_pratique' | trans }}</th>
+                            <td>{{ candidat.dateDebutPratique | date('d/m/Y') }}</td>
+                          </tr>
+                              <tr>
+                                  <th>{{ 'candidat.label.date_inscription' | trans }}</th>
+                                  <td>{{ candidat.dateInscription | date('d/m/Y') | default("--")}}</td>
+                                </tr>
+                                <tr>
+                                  <th>{{ 'candidat.label.date_examen_theorique' | trans }}</th>
+                                  <td>{{ candidat.dateExamenTheorique| date('d/m/Y')}}</td>
+                                </tr>
+                                  <tr>
+                                    <th>{{ 'candidat.label.date_examen_pratique' | trans }}</th>
+                                    <td>{{ candidat.dateExamenPratique | date('d/m/Y')}}</td>
+                                    </tr>
+                                    <tr>
+                                    <th>{{ 'candidat.label.date2_examen_theorique' | trans }}</th>
+                                    <td>{{ candidat.date2ExamenTheorique | date('d/m/Y')}}</td>
+                                  </tr>
+                                  <tr>
+                                  <th>{{ 'candidat.label.date2_examen_pratique' | trans }}</th>
+                                  <td>{{ candidat.date2ExamenPratique | date('d/m/Y')}}</td>
+                                </tr>
+
+                                <tr>
+                                <th style="width:30%">{{ 'candidat.label.is_dossier' | trans }}</th>
+                                {% if candidat.isDossier == 1 %}
+                                <td>Oui</td>
+                               {% else %}
+                                <td>Non</td>
+                              {% endif %}
+                                </tr>
+                                <tr>
+                                <th style="width:30%">{{ 'candidat.label.is_visite_medicale' | trans }}</th>
+                                {% if candidat.IsVisiteMedicale == 1 %}
+                                <td>Oui</td>
+                               {% else %}
+                                <td>Non</td>
+                              {% endif %}
+                                </tr>
+                                <tr>
+                                <th style="width:30%">{{ 'candidat.label.is_succeeded' | trans }}</th>
+                                {% if candidat.IsSucceeded == 1 %}
+                                <td>Oui</td>
+                               {% else %}
+                                <td>Non</td>
+                              {% endif %}
+                                </tr>
+                                <tr>
+                                <th>{{ 'candidat.label.note' | trans }}</th>
+                                <td>{{ candidat.note | default("--")}}</td>
+                              </tr>
+
+
+
+
+                              </tbody>
+                              </table>
+
+                                </div>
+
+                                </div>
+
+              </div>
+              <!-- /.tab-pane -->
+
+  <!-- .tab-pane -->
+              <div class="tab-pane" id="tab_3">
+
+              {% if candidat.cpayments is not empty %}
+
+    <div class="card-body table-responsive no-padding">
+    <div class="box-header">
+    {% if (candidat.prix - total) != 0 %}
+    <a href="{{ path('admin_cpayment_new' , {'candidat_id':candidat.id}) }}" class="btn btn-sm btn-primary">
+    {{ 'actions.add' | trans({}, 'AppBundle') }}
+  </a>
+
+  {% endif %}
+
+
+    </div>
+        <table class="table table-hover">
+            <tr>
+                <th>ID</th>
+                <th>{{ 'cpayment.label.montant' | trans({},'Cpayment') }}</th>
+                <th>{{ 'cpayment.label.date_paiement' | trans({},'Cpayment') }}</th>
+                <th>{{ 'candidat.label.created' | trans }}</th>
+                  <th>{{ 'candidat.label.updated' | trans }}</th>
+                <th>Actions</th>
+            </tr>
+        {% for cpayment in candidat.cpayments  %}
+        {% if not cpayment.deleted %}
+            <tr>
+                <td>
+              {{ cpayment.id }}
+                </td>
+                <td>{{ cpayment.montant }}</td>
+                <td>{{ cpayment.datePaiement | date('d/m/Y H:i')}}</td>
+                <td>{{ cpayment.created | date('d/m/Y H:i')}}</td>
+                  <td>{{ cpayment.updated | date('d/m/Y H:i')}}</td>
+                <td>
+                {# <a href="{ { path('admin_cpayment_show', { 'id': cpayment.id }) }}" class="btn btn-primary btn-sm" data-toggle="tooltip" title="Afficher"> #}
+                  {# <i class="fa fa-eye"></i> #}
+                {# </a> #}
+                <a href="{{ path('admin_cpayment_edit',  { 'id': cpayment.id , 'candidat_id' : cpayment.candidat.id }) }}" class="btn btn-warning btn-sm" data-toggle="tooltip" title="Modifier">
+                  <i class="fa fa-pencil-square-o"></i>
+                </a>
+                <a href="{{ path('admin_cpayment_delete', { 'id': cpayment.id }) }}" class="btn btn-danger btn-sm" title="{{ 'actions.confirmation' | trans }}">
+                  <i class="fa fa-trash-o"></i>
+                </a>
+
+                </td>
+            </tr>
+              {% endif %}
+        {% endfor %}
+        </table>
+    </div>
+    <br/>
+    <div class="row">
+                        <div class="col-sm-4 table-responsive">
+                            <table class="table pull-right">
+                            <tbody>
+                            <tr>
+                              <th>{{ 'candidat.label.prix' | trans }}</th>
+                              <td>{{  candidat.prix}} DH</td>
+                            </tr>
+                              <tr>
+                                <th>{{ 'cpayment.label.total' | trans({},'Cpayment') }}</th>
+                                <td>{{  total}} DH</td>
+                              </tr>
+                              <tr>
+                                <th>{{ 'cpayment.label.rest' | trans({},'Cpayment') }}</th>
+                              {% if (candidat.prix - total) > 0 %}
+                              <td>{{ candidat.prix - total}}.00 DH</td>
+                              {% else %}
+                                  <td>Il a payé toutes ses sommes</td>
+
+                            {% endif %}
+
+
+                              </tr>
+                              </tbody>
+                          </table>
+                      </div>
+
+          </div>
+    {% else %}
+    <div class="empty-box sm">
+  <i class="fa fa-frown-o" aria-hidden="true"></i>
+      <p>Aucun paiement associée.</p>
+
+      <a href="{{ path('admin_cpayment_new' , {'candidat_id':candidat.id}) }}" class="btn btn-sm btn-primary">
+
+        {{ 'actions.add' | trans({}, 'AppBundle') }}
+      </a>
+    </div>
+
+    {% endif %}
+
+
+              </div>
+              <!-- /.tab-pane -->
+            </div>
+            <!-- /.tab-content -->
+
+          </div><!-- /.card-body -->
+        </div>
+        <!-- ./card -->
+      </div>
+      <!-- /.col -->
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+
+        </div>
+    </div>
+{% endblock %}

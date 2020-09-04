@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" version="1.2">
+  <file source-language="fr" target-language="fr" datatype="plaintext" original="file.ext">
+    <header>
+      <tool tool-id="symfony" tool-name="Symfony"/>
+    </header>
+    <body>
+      <trans-unit id="CU.hDpi" resname="assurance.label.montant">
+        <source>assurance.label.montant</source>
+        <target>Montant</target>
+      </trans-unit>
+      <trans-unit id="TAXX3H7" resname="assurance.label.created">
+        <source>assurance.label.created</source>
+        <target>Date création</target>
+      </trans-unit>
+      <trans-unit id="YM7YmnF" resname="assurance.label.updated">
+        <source>assurance.label.updated</source>
+        <target>Date modification</target>
+      </trans-unit>
+      <trans-unit id="CiEKblJ" resname="assurance.label.date_debut">
+        <source>assurance.label.date_debut</source>
+        <target>Date début</target>
+      </trans-unit>
+      <trans-unit id="xqSuF4K" resname="assurance.label.date_fin">
+        <source>assurance.label.date_fin</source>
+        <target>Date Fin</target>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

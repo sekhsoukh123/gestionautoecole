@@ -1,0 +1,7 @@
+# index:
+#      path: /bonjour
+#      controller: App\Controller\BonjourController::index
+#
+# Home:
+#      path: /show
+#      controller: App\Controller\HomeController::index

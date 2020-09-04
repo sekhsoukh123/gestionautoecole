@@ -1,0 +1,205 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ar" xml:lang="ar" dir="rtl">
+
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+   {# admine class #}
+    <link rel="stylesheet" href="{{ asset("css/style.css")}}">
+    <title></title>
+    <style type="text/css">
+    /* pdf  */
+    dt {
+      font-weight: bold;
+      /* text-decoration: underline; */
+      font-size: 20px;
+      display: inline-block;
+    }
+    dd {
+      margin: 0;
+        font-size: 20px;
+      padding: 0;
+
+      display: inline-block;
+
+    }
+    .name{
+      font-weight: bold;
+      /* text-decoration: underline; */
+      font-size: 20px;
+    }
+    body{
+      size: 21cm 29.7cm;
+ margin: 10mm 20mm 20mm 20mm;
+    }
+    .marge{
+      margin-left:40px;
+    }
+    tr{
+      width: 100%;
+    }
+    th,td {
+      width: 50%;
+      text-align:center;
+    }
+
+
+    </style>
+  </head>
+  <body>
+<div class="content">
+<div class="title">
+  <center>  <h2>شهادة نهاية التكوين في تعليم السياقة</h2>
+
+</h3>
+  </center>
+</div>
+
+
+
+
+
+<dl>
+    <dt>رقم الرخصة: </dt>
+    <dd>1160</dd>
+
+
+</dl>
+<dl>
+  <dt>رقم التقيد في السجل الوطني الخاص بمؤسسات تعليم السياقة :
+</dt>
+    <dd>1160</dd>
+</dl>
+<dl>
+  <dt>رقم التقيد في سجل الضريبة المهنية</dt>
+  <dd class="marge">55028192</dd>
+    <dt>رقم التقيد في السجل التجاري</dt>
+      <dd>25871</dd>
+</dl>
+<dl>
+    <dt>المدينة</dt>
+    <dd style="margin-left:40px;">اكادير</dd>
+    <dt>العنوان</dt>
+    <dd>حي الفرح 3 رقم 253 بنسركاو</dd>
+</dl>
+
+
+<dl>
+  <dt>
+الهاتف</dt>
+    <dd style="margin-left:40px;">0671310754</dd>
+    <dt>البريد الالكتروني</dt>
+      <dd>autoecolegourichi@gmail.com</dd>
+</dl>
+
+<dl>
+  <dt style="font-size: 25px;  text-decoration: underline; ">
+الممثل القانوني للمؤسسة
+</dt>
+
+</dl>
+
+<fieldset>
+
+ <label class="name">الاسم الشخصي  :</label>
+ <label >بدر الدين كريشي</label> <br>
+ <label class="name">الاسم العائلي    :</label>
+ <label >كريشي</label> <br>
+ <label class="name">العنوان:</label>
+ <label >حي الفرح 3 رقم 253 بنسركاو</label> <br>
+ <label class="name">رقم الهاتف:</label>
+ <label >0671310754</label> <br>
+
+</fieldset>
+
+<dl>
+  <dt> أشهد أن السيد (ة):
+</dt>
+    <dd>{{candidat.firstNameAr ~ " " ~ candidat.lastNameAr | default("--")}}</dd>
+</dl>
+
+<dl>
+  <dt>الحامل(ة) للبطاقة الوطنية للتعريف رقم:
+</dt>
+    <dd>{{candidat.carteIdentite  | default("--")}}</dd>
+</dl>
+<dl>
+  <dt>الرقم الممنوح من طرف الإدارة (référence web) :
+</dt>
+    <dd>{{candidat.numeroInscription  | default("--")}}</dd>
+</dl>
+
+<dl>
+  <dt>بناء على عقد التكوين بين الطرفين بتاريخ :
+</dt>
+    <dd>{{ candidat.dateInscription| date('Y/m/d')}}</dd>
+</dl>
+<label class="name">تلقى (تلقت) بهده المؤسسة دروسا نظرية وتطبيقية في تعليم سياقة المركبات من صنف"ب" بما مجموعه:20 ساعة بالنسبة للتكوين النظري و 20 ساعة بالنسبة للتكوين التطبيقي طبقا للبرنامج الوطني لتعليم السياقة.
+
+</label>
+<label class="name">وقد أشرف على التكوين النظري المدرب الوارد اسمه بعده :
+
+</label>
+
+<dl>
+  <dt>اسم المدرب (ة) :
+</dt>
+    <dd class="marge">بدر الدين كريشي</dd>
+
+    <dt>رقم رخصته :
+  </dt>
+      <dd>10345</dd>
+</dl>
+<label class="name">وأشرف على التكوين التطبيقي المدرب الوارد اسمه بعده :
+</label>
+
+<dl>
+  <dt>اسم المدرب (ة) :
+</dt>
+    <dd class="marge">بدر الدين كريشي</dd>
+
+    <dt>رقم رخصته :
+  </dt>
+      <dd>10345</dd>
+</dl>
+<label class="name">كما تلقى (تلقت) تكوينه (ها) بواسطة المركبة من صنف "ب" المسجلة تحت رقم :33 ا 76537 في اسم المؤسسة.
+</label>
+
+
+
+
+<table>
+  <tr>
+    <th class="name" >طابع المؤسسة وإسم وتوقيع الممثل القانوني للمؤسسة</th>
+    <th class="name">اسم وتوقيع المرشح</th>
+
+  </tr>
+  <tr>
+  <td >بدر الدين كريشي     </td>
+
+    <td>{{candidat.firstNameAr ~ " " ~ candidat.lastNameAr | default("--")}}</td>
+  </tr>
+</table>
+
+<dl>
+  <dt>حرر ب  :
+</dt>
+    <dd class="marge">أكادير</dd>
+
+    <dt>بتاريخ :
+  </dt>
+      <dd>
+      <br>
+
+{{ datenow| date('Y/m/d')}}
+ </dd>
+</dl>
+
+
+
+
+
+  </body>
+  <script type="text/javascript">
+ window.addEventListener("load", window.print());
+  </script>
+</html>

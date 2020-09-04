@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" version="1.2">
+  <file source-language="fr" target-language="fr" datatype="plaintext" original="file.ext">
+    <header>
+      <tool tool-id="symfony" tool-name="Symfony"/>
+    </header>
+    <body>
+      <trans-unit id="V5TynQf" resname="vehicule.index.title">
+        <source>vehicule.index.title</source>
+        <target>Liste des véhicules</target>
+      </trans-unit>
+      <trans-unit id="l7N6OuR" resname="vehicule.edit.title">
+        <source>vehicule.edit.title</source>
+        <target>Modifier le véhicule</target>
+      </trans-unit>
+      <trans-unit id="xUexnnn" resname="vehicule.new.title">
+        <source>vehicule.new.title</source>
+        <target>Ajouter un véhicule</target>
+      </trans-unit>
+      <trans-unit id="xyHf9fw" resname="vehicule.label.immatriculation">
+        <source>vehicule.label.immatriculation</source>
+        <target>Immatriculation</target>
+      </trans-unit>
+      <trans-unit id="1w49d9D" resname="vehicule.label.marque">
+        <source>vehicule.label.marque</source>
+        <target>Marque</target>
+      </trans-unit>
+      <trans-unit id="qCJSIRk" resname="vehicule.label.model">
+        <source>vehicule.label.model</source>
+        <target>Modél</target>
+      </trans-unit>
+      <trans-unit id="WnPp7kg" resname="vehicule.label.carte_grise">
+        <source>vehicule.label.carte_grise</source>
+        <target>Carte Grise</target>
+      </trans-unit>
+      <trans-unit id="SICcvWo" resname="vehicule.show.title">
+        <source>vehicule.show.title</source>
+        <target>Afficher le véhicule</target>
+      </trans-unit>
+      <trans-unit id="77t7tTL" resname="vehicule.label.date_exp_carte_grise">
+        <source>vehicule.label.date_exp_carte_grise</source>
+        <target>Date expiration du carte grise</target>
+      </trans-unit>
+      <trans-unit id="FGM._IR" resname="vehicule.label.date_prc_assurance">
+        <source>vehicule.label.date_prc_assurance</source>
+        <target>Date expiration d'assurance</target>
+      </trans-unit>
+      <trans-unit id="sjAPxE1" resname="vehicule.label.date_prc_vignette">
+        <source>vehicule.label.date_prc_vignette</source>
+        <target>Date expiration de la vignette</target>
+      </trans-unit>
+      <trans-unit id="Pb206UC" resname="vehicule.label.date_prc_visite_technique">
+        <source>vehicule.label.date_prc_visite_technique</source>
+        <target>Date prochaine visite technique</target>
+      </trans-unit>
+      <trans-unit id="XM8WnR9" resname="vehicule.label.created">
+        <source>vehicule.label.created</source>
+        <target>Date création</target>
+      </trans-unit>
+      <trans-unit id="B9odAcm" resname="vehicule.label.updated">
+        <source>vehicule.label.updated</source>
+        <target>Date modification</target>
+      </trans-unit>
+      <trans-unit id="dC48F0l" resname="actions.confirmation">
+        <source>actions.confirmation</source>
+        <target>__actions.confirmation</target>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

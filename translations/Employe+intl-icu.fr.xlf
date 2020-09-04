@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" version="1.2">
+  <file source-language="fr" target-language="fr" datatype="plaintext" original="file.ext">
+    <header>
+      <tool tool-id="symfony" tool-name="Symfony"/>
+    </header>
+    <body>
+      <trans-unit id="q8gK.gn" resname="employe.edit.title">
+        <source>employe.edit.title</source>
+        <target>Modifier l'employée</target>
+      </trans-unit>
+      <trans-unit id="qe7ufJV" resname="employe.index.title">
+        <source>employe.index.title</source>
+        <target>Liste des employées</target>
+      </trans-unit>
+      <trans-unit id="4Cudqfc" resname="employe.new.title">
+        <source>employe.new.title</source>
+        <target>Ajouter un employée</target>
+      </trans-unit>
+      <trans-unit id="8uuJynz" resname="employe.show.title">
+        <source>employe.show.title</source>
+        <target>Afficher l'employée</target>
+      </trans-unit>
+      <trans-unit id="LLtC8zB" resname="employe.label.gender">
+        <source>employe.label.gender</source>
+        <target>Sexe</target>
+      </trans-unit>
+      <trans-unit id="dbk45pv" resname="gender.mal">
+        <source>gender.mal</source>
+        <target>Homme</target>
+      </trans-unit>
+      <trans-unit id="3Y4oCpI" resname="gender.female">
+        <source>gender.female</source>
+        <target>Femme</target>
+      </trans-unit>
+      <trans-unit id="Qawa6dm" resname="employe.label.carte_identite">
+        <source>employe.label.carte_identite</source>
+        <target>CIN</target>
+      </trans-unit>
+      <trans-unit id="5FrojKk" resname="employe.label.first_name">
+        <source>employe.label.first_name</source>
+        <target>Prénom</target>
+      </trans-unit>
+      <trans-unit id="MvptsGn" resname="employe.label.last_name">
+        <source>employe.label.last_name</source>
+        <target>Nom</target>
+      </trans-unit>
+      <trans-unit id="gAaNWGM" resname="employe.label.date_naissance">
+        <source>employe.label.date_naissance</source>
+        <target>Date naissance</target>
+      </trans-unit>
+      <trans-unit id="oBDKWsY" resname="employe.label.lieu_naissance">
+        <source>employe.label.lieu_naissance</source>
+        <target>Lieu de naissance</target>
+      </trans-unit>
+      <trans-unit id="MbSYe6H" resname="employe.label.pays_naissance">
+        <source>employe.label.pays_naissance</source>
+        <target>Pays</target>
+      </trans-unit>
+      <trans-unit id="CBdhk9z" resname="employe.label.address">
+        <source>employe.label.address</source>
+        <target>Adresse</target>
+      </trans-unit>
+      <trans-unit id="s3s32HM" resname="employe.label.email">
+        <source>employe.label.email</source>
+        <target>Email</target>
+      </trans-unit>
+      <trans-unit id="76G0uj5" resname="employe.label.telephone1">
+        <source>employe.label.telephone1</source>
+        <target>Téléphone1</target>
+      </trans-unit>
+      <trans-unit id="qsYi0Fa" resname="employe.label.telephone2">
+        <source>employe.label.telephone2</source>
+        <target>Téléphone2</target>
+      </trans-unit>
+      <trans-unit id="KydFzIg" resname="employe.label.created">
+        <source>employe.label.created</source>
+        <target>Date Création</target>
+      </trans-unit>
+      <trans-unit id="XUD53Xm" resname="employe.label.label.updated">
+        <source>employe.label.label.updated</source>
+        <target>Date modification</target>
+      </trans-unit>
+      <trans-unit id="8JZxrIF" resname="employe.label.photo">
+        <source>employe.label.photo</source>
+        <target>Photo</target>
+      </trans-unit>
+      <trans-unit id="VnUJcWJ" resname="emptyBox.title">
+        <source>emptyBox.title</source>
+        <target>Pas de resultat</target>
+      </trans-unit>
+      <trans-unit id="employe.account">
+      <source>employe.account</source>
+      <target>Compte</target>
+    </trans-unit>
+    <trans-unit id="employe.account.empty">
+      <source>employe.account.empty</source>
+      <target>Aucun compte associer a ce membre</target>
+    </trans-unit>
+    <trans-unit id="user.labels.username">
+      <source>user.labels.username</source>
+      <target>Nom d'utilisateur</target>
+    </trans-unit>
+    <trans-unit id="user.labels.email">
+      <source>user.labels.email</source>
+      <target>Email</target>
+    </trans-unit>
+    <trans-unit id="user.labels.roles.label">
+      <source>user.labels.roles.label</source>
+      <target>Rôles</target>
+    </trans-unit>
+    </body>
+  </file>
+</xliff>

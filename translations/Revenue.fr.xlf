@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" version="1.2">
+  <file source-language="fr" target-language="fr" datatype="plaintext" original="file.ext">
+    <header>
+      <tool tool-id="symfony" tool-name="Symfony"/>
+    </header>
+    <body>
+      <trans-unit id="g7vE3Ri" resname="revenue.edit.title">
+        <source>revenue.edit.title</source>
+        <target>Modifier le revenue</target>
+      </trans-unit>
+      <trans-unit id="XxeDYrR" resname="revenue.index.title">
+        <source>revenue.index.title</source>
+        <target>Liste des revenues</target>
+      </trans-unit>
+      <trans-unit id="zbZeY7W" resname="revenue.new.title">
+        <source>revenue.new.title</source>
+        <target>Ajouter un revenue</target>
+      </trans-unit>
+      <trans-unit id="Eu9yccz" resname="revenue.show.title">
+        <source>revenue.show.title</source>
+        <target>Afficher le revenue</target>
+      </trans-unit>
+      <trans-unit id="revenue.label.candidat">
+        <source>revenue.label.candidat</source>
+        <target>Candidat</target>
+      </trans-unit>
+      <trans-unit id="revenue.label.montant">
+        <source>revenue.label.montant</source>
+        <target>Montant</target>
+      </trans-unit>
+      <trans-unit id="ch4VrFA" resname="revenue.label.created">
+        <source>revenue.label.created</source>
+        <target>Date Création</target>
+      </trans-unit>
+      <trans-unit id="dcsDN_q" resname="revenue.label.label.updated">
+        <source>revenue.label.label.updated</source>
+        <target>Date modification</target>
+      </trans-unit>
+      <trans-unit id="VnUJcWJ" resname="emptyBox.title">
+        <source>emptyBox.title</source>
+        <target>Pas de resultat</target>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

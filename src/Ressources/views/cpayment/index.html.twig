@@ -1,0 +1,100 @@
+{% extends 'base.html.twig' %}
+{% trans_default_domain 'Candidat' %}
+{% block title %}
+<title>Liste des Candidats</title>
+
+{% endblock %}
+{% block content_header %}
+
+<div class="content-header">
+  <div class="container-fluid">
+    <div class="row mb-2">
+      <div class="col-sm-6">
+        <h1 class="m-0 text-dark">Liste des Candidats</h1>
+
+      </div><!-- /.col -->
+      <div class="col-sm-6">
+        <ol class="breadcrumb float-sm-right">
+          <li class="breadcrumb-item"><a href="#">Home</a></li>
+          <li class="breadcrumb-item active">Candidats</li>
+        </ol>
+      </div><!-- /.col -->
+    </div><!-- /.row -->
+  </div><!-- /.container-fluid -->
+</div>
+
+{% endblock %}
+
+{% block content %}
+<div class="row">
+     <div class="col-12">
+           <div class="card">
+             <div class="card-header">
+
+               <div class="box-actions">
+                   <a href="{{ path('admin_candidat_new') }}" class="btn btn-primary">
+                       {{ 'candidat.new.title' | trans() }}
+                   </a>
+
+               </div>
+               <div class="card-tools">
+
+                 <div class="input-group input-group-sm" style="width: 150px;">
+                   <input type="text" name="table_search" class="form-control float-right" placeholder="Search">
+
+                   <div class="input-group-append">
+                     <button type="submit" class="btn btn-default"><i class="fas fa-search"></i></button>
+                   </div>
+                 </div>
+               </div>
+             </div>
+             <!-- /.card-header -->
+                {% if cpayments is not empty %}
+             <div class="card-body table-responsive p-0">
+               <table class="table table-hover text-nowrap">
+                 <thead>
+                   <tr>
+                     <th>M</th>
+                     <th>Date</th>
+
+                     <th>Actions</th>
+                   </tr>
+                 </thead>
+                 <tbody>
+                 {% for cpayment in cpayments %}
+                 <tr>
+
+                 <td><a class="gras" href="#">{{cpayment.montant | default("--")}}</a>
+                 </td>
+
+
+                 <td>
+
+                 </td>
+                 <td>
+
+                 </td>
+                 </tr>
+
+                     {% endfor %}
+                 </tbody>
+               </table>
+             </div>
+
+             {% else %}
+               <div class="empty-box">
+                 <i class="fa fa-frown-o" aria-hidden="true"></i>
+                 <p>{{ 'emptyBox.title' | trans }}</p>
+                <a href="{{ path('admin_cpayment_new') }}" class="btn btn-primary btn-sm">
+                    {{ 'cpayment.new.title' | trans() }}
+                </a>
+
+               </div>
+      {% endif %}
+             <!-- /.card-body -->
+           </div>
+           <!-- /.card -->
+         </div>
+       </div>
+       <!-- /.row -->
+{% endblock %}

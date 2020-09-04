@@ -1,0 +1,440 @@
+{% extends "base.html.twig" %}
+
+{% trans_default_domain 'Vehicule' %}
+
+
+{% block title %}
+<title>{{ 'vehicule.show.title' | trans }} | {{ parent() }}</title>
+
+{% endblock %}
+
+{% block content_header %}
+
+<div class="content-header">
+  <div class="container-fluid">
+    <div class="row mb-2">
+      <div class="col-sm-6">
+        <h1 class="m-0 text-dark">{{ 'vehicule.show.title' | trans }} </h1>
+
+      </div><!-- /.col -->
+      <div class="col-sm-6">
+        <ol class="breadcrumb float-sm-right">
+          <li class="breadcrumb-item"><a href="#">Home</a></li>
+          <li class="breadcrumb-item"><a href="{{ path('admin_vehicule_index') }}">{{ 'vehicule.index.title' | trans }} </a></li>
+          <li class="breadcrumb-item active"> {{ vehicule.id | trans}}</li>
+        </ol>
+      </div><!-- /.col -->
+    </div><!-- /.row -->
+  </div><!-- /.container-fluid -->
+</div>
+
+{% endblock %}
+
+
+{% block content %}
+
+
+    <div class="row">
+      <div class="col-12">
+        <!-- Custom Tabs -->
+        <div class="card">
+          <div class="card-header d-flex p-0">
+
+            <ul class="nav nav-pills p-2">
+              <li class="nav-item"><a class="nav-link active" href="#tab_1" data-toggle="tab">Info</a></li>
+              <li class="nav-item"><a class="nav-link" href="#tab_2" data-toggle="tab">Assurance</a></li>
+              <li class="nav-item"><a class="nav-link" href="#tab_3" data-toggle="tab">Visite technique</a></li>
+              <li class="nav-item"><a class="nav-link" href="#tab_4" data-toggle="tab">Vignette</a></li>
+              <li class="nav-item"><a class="nav-link" href="#tab_5" data-toggle="tab">Carte Grise</a></li>
+
+            </ul>
+          </div><!-- /.card-header -->
+          <div class="card-body">
+            <div class="box-header with-border">
+              <a href="{{ path('admin_vehicule_index') }}" class="btn btn-sm btn-primary">
+            		<i class="fa fa-reply" aria-hidden="true"></i>
+            		{{ 'actions.back_to_list' | trans({}, 'AppBundle') }}
+            	</a>
+              <div class="pull-right">
+              <a href="{{ path('admin_vehicule_edit', { 'id': vehicule.id }) }}" class="btn btn-sm btn-warning" data-toggle="tooltip" title="{{ 'actions.update' | trans({}, 'AppBundle') }}">
+                <i class="fa fa-pencil"> </i>  <span class="hidden-xs hidden-sm"> {{ 'actions.update' | trans ({}, 'AppBundle') }}</span>
+              </a>
+              <a href="{{ path('admin_vehicule_delete', { 'id': vehicule.id }) }}" class="btn btn-sm btn-danger" data-toggle="tooltip" title="{{ 'actions.delete' | trans({}, 'AppBundle') }}">
+                <i class="fa fa-trash-o"> </i>  <span class="hidden-xs hidden-sm"> {{ 'actions.delete' | trans ({}, 'AppBundle') }}</span>
+              </a>
+
+              </div>
+              </div>
+
+      <!-- /.tab-content -->
+            <div class="tab-content">
+
+                <!-- /.tab-pane -->
+              <div class="tab-pane active" id="tab_1">
+              <div class="line line-right">
+              {% if vehicule.photo is not empty %}
+
+              <a href="{{ path('admin_vehicule_show', { 'id': vehicule.id }) }}">
+              <img    src="{{ asset('uploads/images/vehicule/' ~ vehicule.photo)}}"  />
+              </a>
+              {% else %}
+              <img  src="{{ asset('uploads/images/user.png')}}"  />
+
+
+              {% endif %}
+                </div>
+              <div class="row">
+                                  <div class="col-sm table-responsive">
+                                      <table class="table">
+                                      <tbody>
+
+                                  <tr>
+                                      <th>{{ 'vehicule.label.immatriculation' | trans }}</th>
+                                      <td>{{ vehicule.immatriculation}}</td>
+                                    </tr>
+                                    <tr>
+                                      <th>{{ 'vehicule.label.marque' | trans }}</th>
+                                      <td>{{ vehicule.marque}}</td>
+                                      <th>{{ 'vehicule.label.model' | trans }}</th>
+                                      <td>{{ vehicule.model | default("--")}}</td>
+                                    </tr>
+
+                                    <tr>
+                                      <th>{{ 'vehicule.label.date_exp_carte_grise' | trans }}</th>
+                                      <td>{{ vehicule.dateExpCarteGrise  | date('d/m/Y')}}</td>
+
+
+                                    </tr>
+
+                                    <tr>
+                                      <th>{{ 'vehicule.label.date_prc_assurance' | trans }}</th>
+                                      <td>{{ vehicule.datePrcAssurance  | date('d/m/Y')}}</td>
+
+
+                                    </tr>
+
+                                    <tr>
+                                      <th>{{ 'vehicule.label.date_prc_vignette' | trans }}</th>
+                                      <td>{{ vehicule.datePrcVignette  | date('d/m/Y')}}</td>
+
+
+                                    </tr>
+
+                                    <tr>
+                                      <th>{{ 'vehicule.label.date_prc_visite_technique' | trans }}</th>
+                                      <td>{{ vehicule.datePrcVisiteTechnique  | date('d/m/Y')}}</td>
+
+
+                                    </tr>
+
+
+
+
+
+                                      <tr>
+                                        <th>{{ 'vehicule.label.created' | trans }}</th>
+                                        <td>{{ vehicule.created | date('d/m/Y H:i')}}</td>
+
+                                        <th>{{ 'vehicule.label.updated' | trans }}</th>
+                                        <td>{{ vehicule.updated | date('d/m/Y H:i')}}</td>
+                                      </tr>
+
+                                </tbody>
+                            </table>
+                        </div>
+
+                    </div>
+
+
+
+              </div>
+                <!-- /.tab-pane -->
+              <!-- .tab-pane -->
+              <div class="tab-pane" id="tab_2">
+
+              {% if vehicule.assurances is not empty %}
+
+    <div class="card-body table-responsive no-padding">
+    <div class="box-header">
+
+    <a href="{{ path('admin_assurance_new' , {'vehicule_id': vehicule.id}) }}" class="btn btn-sm btn-primary">
+
+      {{ 'actions.add' | trans({}, 'AppBundle') }}
+    </a>
+
+    </div>
+        <table class="table table-hover">
+            <tr>
+                <th>ID</th>
+                <th>{{ 'assurance.label.montant' | trans({},'Assurance') }}</th>
+                <th>{{ 'assurance.label.date_debut' | trans({},'Assurance') }}</th>
+                <th>{{ 'assurance.label.date_fin' | trans({},'Assurance') }}</th>
+
+                <th>{{ 'assurance.label.created' | trans({},'Assurance') }}</th>
+                <th>{{ 'assurance.label.updated' | trans({},'Assurance') }}</th>
+                <th>Actions</th>
+            </tr>
+        {% for assurance in vehicule.assurances  %}
+        {% if not assurance.deleted %}
+            <tr>
+                <td>
+                {{ assurance.id }}
+                </td>
+                <td>{{ assurance.montant }}</td>
+                <td>{{ assurance.dateDebut | date('d/m/Y H:i')}}</td>
+                <td>{{ assurance.dateFin | date('d/m/Y H:i')}}</td>
+                <td>{{ assurance.created | date('d/m/Y H:i')}}</td>
+                <td>{{ assurance.updated | date('d/m/Y H:i')}}</td>
+                <td>
+
+                <a href="{{ path('admin_assurance_edit',  { 'id': assurance.id , 'vehicule_id' : assurance.vehicule.id }) }}" class="btn btn-warning btn-sm" data-toggle="tooltip" title="Modifier">
+                  <i class="fa fa-pencil-square-o"></i>
+                </a>
+                <a href="{{ path('admin_assurance_delete', { 'id': assurance.id }) }}" class="btn btn-danger btn-sm" >
+                  <i class="fa fa-trash-o"></i>
+                </a>
+
+                </td>
+            </tr>
+              {% endif %}
+        {% endfor %}
+        </table>
+    </div>
+
+    {% else %}
+    <div class="empty-box sm">
+   <i class="fa fa-frown-o" aria-hidden="true"></i>
+      <p>Aucune Assurance associée.</p>
+
+      <a href="{{ path('admin_assurance_new' , {'vehicule_id':vehicule.id}) }}" class="btn btn-sm btn-primary">
+
+        {{ 'actions.add' | trans({}, 'AppBundle') }}
+      </a>
+    </div>
+
+    {% endif %}
+
+
+
+
+              </div>
+              <!-- /.tab-pane -->
+
+  <!-- .tab-pane -->
+              <div class="tab-pane" id="tab_3">
+              {% if vehicule.visiteTechniques is not empty %}
+
+                            <div class="card-body table-responsive no-padding">
+                            <div class="box-header">
+
+                            <a href="{{ path('admin_visite_technique_new' , {'vehicule_id':vehicule.id}) }}" class="btn btn-sm btn-primary">
+
+                              {{ 'actions.add' | trans({}, 'AppBundle') }}
+                            </a>
+
+                            </div>
+                                <table class="table table-hover">
+                                    <tr>
+                                        <th>ID</th>
+                                        <th>{{ 'visiteTechnique.label.montant' | trans({},'VisiteTechnique') }}</th>
+                                        <th>{{ 'visiteTechnique.label.date_debut' | trans({},'VisiteTechnique') }}</th>
+                                          <th>{{ 'visiteTechnique.label.date_fin' | trans({},'VisiteTechnique') }}</th>
+                                        <th>{{ 'visiteTechnique.label.created' | trans({},'VisiteTechnique') }}</th>
+                                        <th>{{ 'visiteTechnique.label.updated' | trans({},'VisiteTechnique') }}</th>
+                                        <th>Actions</th>
+                                    </tr>
+                                {% for visiteTechnique in vehicule.visiteTechniques  %}
+                                {% if not visiteTechnique.deleted %}
+                                    <tr>
+                                        <td>
+                                        {{ visiteTechnique.id }}
+                                        </td>
+                                        <td>{{ visiteTechnique.montant }}</td>
+                                        <td>{{ visiteTechnique.dateDebut | date('d/m/Y H:i')}}</td>
+                                        <td>{{ visiteTechnique.dateFin | date('d/m/Y H:i')}}</td>
+                                        <td>{{ visiteTechnique.created | date('d/m/Y H:i')}}</td>
+                                        <td>{{ visiteTechnique.updated | date('d/m/Y H:i')}}</td>
+                                        <td>
+
+                                        <a href="{{ path('admin_visite_technique_edit',  { 'id': visiteTechnique.id , 'vehicule_id' : visiteTechnique.vehicule.id }) }}" class="btn btn-warning btn-sm" data-toggle="tooltip" title="Modifier">
+                                          <i class="fa fa-pencil-square-o"></i>
+                                        </a>
+                                        <a href="{{ path('admin_visite_technique_delete', { 'id': visiteTechnique.id }) }}" class="btn btn-danger btn-sm" title="{{ 'actions.confirmation' | trans }}">
+                                          <i class="fa fa-trash-o"></i>
+                                        </a>
+
+                                        </td>
+                                    </tr>
+                                      {% endif %}
+                                {% endfor %}
+                                </table>
+                            </div>
+
+                            {% else %}
+                            <div class="empty-box sm">
+                          <i class="fa fa-frown-o" aria-hidden="true"></i>
+                              <p>Aucun visite technique associée.</p>
+
+                              <a href="{{ path('admin_visite_technique_new' , {'vehicule_id':vehicule.id}) }}" class="btn btn-sm btn-primary">
+
+                                {{ 'actions.add' | trans({}, 'AppBundle') }}
+                              </a>
+                            </div>
+
+                            {% endif %}
+
+
+              </div>
+              <!-- /.tab-pane -->
+
+              {# tab pane 4 #}
+
+              <div class="tab-pane" id="tab_4">
+              {% if vehicule.vignettes is not empty %}
+
+                            <div class="card-body table-responsive no-padding">
+                            <div class="box-header">
+
+                            <a href="{{ path('admin_vignette_new' , {'vehicule_id':vehicule.id}) }}" class="btn btn-sm btn-primary">
+
+                            {{ 'actions.add' | trans({}, 'AppBundle') }}
+                            </a>
+
+                            </div>
+                            <table class="table table-hover">
+                                <tr>
+                                    <th>ID</th>
+                                    <th>{{ 'vignette.label.montant' | trans({},'Vignette') }}</th>
+                                    <th>{{ 'vignette.label.date_debut' | trans({},'Vignette') }}</th>
+
+                                    <th>{{ 'vignette.label.date_fin' | trans({},'Vignette') }}</th>
+                                    <th>{{ 'vignette.label.created' | trans({},'Vignette') }}</th>
+                                    <th>{{ 'vignette.label.updated' | trans({},'Vignette') }}</th>
+                                    <th>Actions</th>
+                                </tr>
+                            {% for vignette in vehicule.vignettes  %}
+                            {% if not vignette.deleted %}
+                                <tr>
+                                    <td>
+                                    {{ vignette.id }}
+                                    </td>
+                                    <td>{{ vignette.montant }}</td>
+                                    <td>{{ vignette.dateDebut | date('d/m/Y H:i')}}</td>
+                                    <td>{{ vignette.dateFin | date('d/m/Y H:i')}}</td>
+                                    <td>{{ vignette.created | date('d/m/Y H:i')}}</td>
+                                    <td>{{ vignette.updated | date('d/m/Y H:i')}}</td>
+                                    <td>
+
+                                    <a href="{{ path('admin_vignette_edit',  { 'id': vignette.id , 'vehicule_id' : vignette.vehicule.id }) }}" class="btn btn-warning btn-sm" data-toggle="tooltip" title="Modifier">
+                                      <i class="fa fa-pencil-square-o"></i>
+                                    </a>
+                                    <a href="{{ path('admin_vignette_delete', { 'id': vignette.id }) }}" class="btn btn-danger btn-sm" title="{{ 'actions.confirmation' | trans }}">
+                                      <i class="fa fa-trash-o"></i>
+                                    </a>
+
+                                    </td>
+                                </tr>
+                                  {% endif %}
+                            {% endfor %}
+                            </table>
+                            </div>
+
+                            {% else %}
+                            <div class="empty-box sm">
+                            <i class="fa fa-frown-o" aria-hidden="true"></i>
+                            <p>Aucun vignette associée.</p>
+
+                            <a href="{{ path('admin_vignette_new' , {'vehicule_id':vehicule.id}) }}" class="btn btn-sm btn-primary">
+
+                            {{ 'actions.add' | trans({}, 'AppBundle') }}
+                            </a>
+                            </div>
+
+                            {% endif %}
+              </div>
+              {# tab pane 4 #}
+
+              {# tab pane 5 #}
+
+              <div class="tab-pane" id="tab_5">
+              {% if vehicule.carteGrises is not empty %}
+
+                              <div class="card-body table-responsive no-padding">
+                              <div class="box-header">
+
+                              <a href="{{ path('admin_carte_grise_new' , {'vehicule_id':vehicule.id}) }}" class="btn btn-sm btn-primary">
+
+                                {{ 'actions.add' | trans({}, 'AppBundle') }}
+                              </a>
+
+                              </div>
+                                  <table class="table table-hover">
+                                      <tr>
+                                          <th>ID</th>
+                                          <th>{{ 'carteGrise.label.montant' | trans({},'CarteGrise') }}</th>
+                                          <th>{{ 'carteGrise.label.date_debut' | trans({},'CarteGrise') }}</th>
+                                          <th>{{ 'carteGrise.label.date_fin' | trans({},'CarteGrise') }}</th>
+
+                                          <th>{{ 'carteGrise.label.created' | trans({},'CarteGrise') }}</th>
+                                          <th>{{ 'carteGrise.label.updated' | trans({},'CarteGrise') }}</th>
+                                          <th>Actions</th>
+                                      </tr>
+                                  {% for carteGrise in vehicule.carteGrises  %}
+                                  {% if not carteGrise.deleted %}
+                                      <tr>
+                                          <td>
+                                          {{ carteGrise.id }}
+                                          </td>
+                                          <td>{{ carteGrise.montant }}</td>
+                                          <td>{{ carteGrise.dateDebut | date('d/m/Y H:i')}}</td>
+                                          <td>{{ carteGrise.dateFin | date('d/m/Y H:i')}}</td>
+                                          <td>{{ carteGrise.created | date('d/m/Y H:i')}}</td>
+                                          <td>{{ carteGrise.updated | date('d/m/Y H:i')}}</td>
+                                          <td>
+
+                                          <a href="{{ path('admin_carte_grise_edit',  { 'id': carteGrise.id , 'vehicule_id' : carteGrise.vehicule.id }) }}" class="btn btn-warning btn-sm" data-toggle="tooltip" title="Modifier">
+                                            <i class="fa fa-pencil-square-o"></i>
+                                          </a>
+                                          <a href="{{ path('admin_carte_grise_delete', { 'id': carteGrise.id }) }}" class="btn btn-danger btn-sm" title="{{ 'actions.confirmation' | trans }}">
+                                            <i class="fa fa-trash-o"></i>
+                                          </a>
+
+                                          </td>
+                                      </tr>
+                                        {% endif %}
+                                  {% endfor %}
+                                  </table>
+                              </div>
+
+                              {% else %}
+                              <div class="empty-box sm">
+                            <i class="fa fa-frown-o" aria-hidden="true"></i>
+                                <p>Aucun carte grise associée.</p>
+
+                                <a href="{{ path('admin_carte_grise_new' , {'vehicule_id':vehicule.id}) }}" class="btn btn-sm btn-primary">
+
+                                  {{ 'actions.add' | trans({}, 'AppBundle') }}
+                                </a>
+                              </div>
+
+                              {% endif %}
+
+
+              </div>
+              {# tab pane 5 #}
+
+            </div>
+            <!-- /.tab-content -->
+
+          </div><!-- /.card-body -->
+        </div>
+        <!-- ./card -->
+      </div>
+      <!-- /.col -->
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+
+        </div>
+    </div>
+{% endblock %}

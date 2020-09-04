@@ -1,0 +1,121 @@
+{% trans_default_domain 'AppBundle' %}
+
+
+<!-- Main Sidebar Container -->
+<aside class="main-sidebar sidebar-dark-primary elevation-4">
+  <!-- Brand Logo -->
+
+
+  <!-- Sidebar -->
+  <div class="sidebar">
+    <!-- Sidebar user panel (optional) -->
+    <div class="user-panel mt-3 pb-3 mb-3 d-flex">
+      <div class="image">
+        <img src="{{ asset("img/user2-160x160.jpg")}}" class="img-circle elevation-2" alt="User Image">
+      </div>
+      <div class="info">
+        <a href="#" class="d-block">Chaymae Sekhsoukh</a>
+      </div>
+    </div>
+
+    <!-- Sidebar Menu -->
+    <nav class="mt-2">
+
+    		{% set route = app.request.get('_route') %}
+
+      <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+        <!-- Add icons to the links using the .nav-icon class
+             with font-awesome or any other icon font library -->
+      <li class="nav-item has-treeview">
+    <a href="{{path('admin_default_index')}}" class="nav-link  {% if app.request.get('_route') == 'admin_default_index' %} active {% endif %}">
+          <i class="nav-icon fas fa-tachometer-alt"></i>
+          <p>
+            {{ 'menu.home' | trans }}
+          </p>
+        </a>
+      </li>
+
+      <li class="nav-item has-treeview {{ 'candidat' in route ? 'menu-open' }}">
+         <a href="#" class="nav-link {{ 'candidat' in route ? 'active' }}">
+          <i class="nav-icon fas fa-users"></i>
+          <p>{{ 'menu.candidat' | trans }}<i class="fas fa-angle-left right"></i></p>
+         </a>
+        <ul class="nav nav-treeview">
+      <li class="nav-item"><a href="{{ path('admin_candidat_index') }}" class="nav-link  {% if app.request.get('_route') == 'admin_candidat_index' %} active {% endif %}"><i class="far fa-circle nav-icon"></i><p>{{ 'menu.candidat.index' | trans }}</p></a></li>
+
+    <li class="nav-item"><a href="{{ path('admin_candidat_new') }}" class="nav-link {% if app.request.get('_route') == 'admin_candidat_new' %} active {% endif %}"><i class="far fa-circle nav-icon"></i><p>{{ 'menu.candidat.new' | trans }}</p></a></li>
+        </ul>
+      </li>
+
+      {# <li class="nav-item has-treeview {{ 'monitor' in route ? 'menu-open' }}">
+         <a href="#" class="nav-link {{ 'monitor' in route ? 'active' }}">
+          <i class="nav-icon fa fa-user"></i>
+          <p>{{ 'menu.monitor' | trans }}<i class="fas fa-angle-left right"></i></p>
+         </a>
+        <ul class="nav nav-treeview">
+      <li class="nav-item"><a href="{{ path('admin_monitor_index') }}" class="nav-link  {% if app.request.get('_route') == 'admin_monitor_index' %} active {% endif %}"><i class="far fa-circle nav-icon"></i><p>{{ 'menu.monitor.index' | trans }}</p></a></li>
+    <li class="nav-item"><a href="{{ path('admin_monitor_new') }}" class="nav-link  {% if app.request.get('_route') == 'admin_monitor_new' %} active {% endif %}"><i class="far fa-circle nav-icon"></i><p>{{ 'menu.monitor.new' | trans }}</p></a></li>
+        </ul>
+      </li> #}
+
+      <li class="nav-item has-treeview {{ 'vehicule' in route ? 'menu-open' }}">
+         <a href="#" class="nav-link {{ 'vehicule' in route ? 'active' }}">
+          <i class="nav-icon fas fa-car"></i>
+          <p>{{ 'menu.vehicule' | trans }}<i class="fas fa-angle-left right"></i></p>
+         </a>
+        <ul class="nav nav-treeview">
+      <li class="nav-item"><a href="{{ path('admin_vehicule_index') }}" class="nav-link  {% if app.request.get('_route') == 'admin_vehicule_index' %} active {% endif %}"><i class="far fa-circle nav-icon"></i><p>{{ 'menu.vehicule.index' | trans }}</p></a></li>
+      <li class="nav-item"><a href="{{ path('admin_vehicule_new') }}" class="nav-link  {% if app.request.get('_route') == 'admin_vehicule_new' %} active {% endif %}"><i class="far fa-circle nav-icon"></i><p>{{ 'menu.vehicule.new' | trans }}</p></a></li>
+        </ul>
+      </li>
+      <li class="nav-item has-treeview {{ 'employe' in route ? 'menu-open' }}">
+         <a href="#" class="nav-link {{ 'employe' in route ? 'active' }}">
+          <i class="nav-icon fas fa-briefcase"></i>
+          <p>{{ 'menu.employe' | trans }}<i class="fas fa-angle-left right"></i></p>
+         </a>
+        <ul class="nav nav-treeview">
+      <li class="nav-item"><a href="{{ path('admin_employe_index') }}" class="nav-link  {% if app.request.get('_route') == 'admin_employe_index' %} active {% endif %}"><i class="far fa-circle nav-icon"></i><p>{{ 'menu.employe.index' | trans }}</p></a></li>
+      <li class="nav-item"><a href="{{ path('admin_employe_new') }}" class="nav-link  {% if app.request.get('_route') == 'admin_employe_new' %} active {% endif %}"><i class="far fa-circle nav-icon"></i><p>{{ 'menu.employe.new' | trans }}</p></a></li>
+        </ul>
+      </li>
+      <li class="nav-item has-treeview {{ 'entreprise' in route ? 'menu-open' }}">
+         <a href="#" class="nav-link {{ 'entreprise' in route ? 'active' }}">
+          <i class="nav-icon fas fa-university"></i>
+          <p>{{ 'menu.entreprise' | trans }}<i class="fas fa-angle-left right"></i></p>
+         </a>
+        <ul class="nav nav-treeview">
+      <li class="nav-item"><a href="{{ path('admin_entreprise_index') }}" class="nav-link  {% if app.request.get('_route') == 'admin_entreprise_index' %} active {% endif %}"><i class="far fa-circle nav-icon"></i><p>{{ 'menu.entreprise.index' | trans }}</p></a></li>
+      <li class="nav-item"><a href="{{ path('admin_entreprise_new') }}" class="nav-link  {% if app.request.get('_route') == 'admin_entreprise_new' %} active {% endif %}"><i class="far fa-circle nav-icon"></i><p>{{ 'menu.entreprise.new' | trans }}</p></a></li>
+        </ul>
+      </li>
+        <li class="nav-item has-treeview {{ 'revenue' in route ? 'menu-open' }}">
+         <a href="#" class="nav-link {{ 'revenue' in route ? 'active' }}">
+          <i class="nav-icon fas fa-chart-line"></i>
+          <p>{{ 'menu.revenue' | trans }}<i class="fas fa-angle-left right"></i></p>
+         </a>
+        <ul class="nav nav-treeview">
+      <li class="nav-item"><a href="{{ path('admin_revenue_index') }}" class="nav-link  {% if app.request.get('_route') == 'admin_revenue_index' %} active {% endif %}"><i class="far fa-circle nav-icon"></i><p>{{ 'menu.revenue.index' | trans }}</p></a></li>
+      <li class="nav-item"><a href="{{ path('admin_revenue_new') }}" class="nav-link  {% if app.request.get('_route') == 'admin_revenue_new' %} active {% endif %}"><i class="far fa-circle nav-icon"></i><p>{{ 'menu.revenue.new' | trans }}</p></a></li>
+        </ul>
+      </li>
+
+      <li class="nav-item has-treeview {{ 'depense' in route ? 'menu-open' }}">
+         <a href="#" class="nav-link {{ 'depense' in route ? 'active' }}">
+          <i class="nav-icon fas fa-chart-bar"></i>
+          <p>{{ 'menu.depense' | trans }}<i class="fas fa-angle-left right"></i></p>
+         </a>
+        <ul class="nav nav-treeview">
+      <li class="nav-item"><a href="{{ path('admin_depense_index') }}" class="nav-link  {% if app.request.get('_route') == 'admin_depense_index' %} active {% endif %}"><i class="far fa-circle nav-icon"></i><p>{{ 'menu.depense.index' | trans }}</p></a></li>
+      <li class="nav-item"><a href="{{ path('admin_depense_new') }}" class="nav-link  {% if app.request.get('_route') == 'admin_depense_new' %} active {% endif %}"><i class="far fa-circle nav-icon"></i><p>{{ 'menu.depense.new' | trans }}</p></a></li>
+        </ul>
+      </li>
+
+
+        <li class="nav-header">EXAMPLES</li>
+
+      </ul>
+    </nav>
+    <!-- /.sidebar-menu -->
+  </div>
+  <!-- /.sidebar -->
+</aside>

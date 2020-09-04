@@ -1,0 +1,193 @@
+{% extends "base.html.twig" %}
+
+{% trans_default_domain 'Entreprise' %}
+
+
+{% block title %}
+<title>{{ 'entreprise.show.title' | trans }} | {{ parent() }}</title>
+
+{% endblock %}
+
+{% block content_header %}
+
+<div class="content-header">
+  <div class="container-fluid">
+    <div class="row mb-2">
+      <div class="col-sm-6">
+        <h1 class="m-0 text-dark">{{ 'entreprise.show.title' | trans }} </h1>
+
+      </div><!-- /.col -->
+      <div class="col-sm-6">
+        <ol class="breadcrumb float-sm-right">
+          <li class="breadcrumb-item"><a href="#">Home</a></li>
+          <li class="breadcrumb-item"><a href="{{ path('admin_entreprise_index') }}">Moniteurs</a></li>
+          <li class="breadcrumb-item active"> {{ entreprise.id | trans}}</li>
+        </ol>
+      </div><!-- /.col -->
+    </div><!-- /.row -->
+  </div><!-- /.container-fluid -->
+</div>
+
+{% endblock %}
+
+
+{% block content %}
+
+
+    <div class="row">
+      <div class="col-12">
+        <!-- Custom Tabs -->
+        <div class="card">
+          <div class="card-header d-flex p-0">
+
+            <ul class="nav nav-pills p-2">
+              <li class="nav-item"><a class="nav-link active" href="#tab_1" data-toggle="tab">Coordonnées</a></li>
+              {# <li class="nav-item"><a class="nav-link" href="#tab_2" data-toggle="tab">Examen</a></li> #}
+              {# <li class="nav-item"><a class="nav-link" href="#tab_3" data-toggle="tab">Paiement</a></li> #}
+
+            </ul>
+          </div><!-- /.card-header -->
+          <div class="card-body">
+            <div class="box-header with-border">
+              <a href="{{ path('admin_entreprise_index') }}" class="btn btn-sm btn-primary">
+            		<i class="fa fa-reply" aria-hidden="true"></i>
+            		{{ 'actions.back_to_list' | trans({}, 'AppBundle') }}
+            	</a>
+              <div class="pull-right">
+              <a href="{{ path('admin_entreprise_edit', { 'id': entreprise.id }) }}" class="btn btn-sm btn-warning" data-toggle="tooltip" title="{{ 'actions.update' | trans({}, 'AppBundle') }}">
+                <i class="fa fa-pencil"> </i>  <span class="hidden-xs hidden-sm"> {{ 'actions.update' | trans ({}, 'AppBundle') }}</span>
+              </a>
+              <a href="{{ path('admin_entreprise_delete', { 'id': entreprise.id }) }}" class="btn btn-sm btn-danger" data-toggle="tooltip" title="{{ 'actions.delete' | trans({}, 'AppBundle') }}">
+                <i class="fa fa-trash-o"> </i>  <span class="hidden-xs hidden-sm"> {{ 'actions.delete' | trans ({}, 'AppBundle') }}</span>
+              </a>
+              </div>
+              </div>
+
+      <!-- /.tab-content -->
+            <div class="tab-content">
+
+                <!-- /.tab-pane -->
+              <div class="tab-pane active" id="tab_1">
+             
+              <div class="row">
+
+      <div class="col-sm table-responsive">
+          <table class="table">
+          <tbody>
+            <tr>
+            <tr>
+              <th>{{ 'entreprise.label.name' | trans }}</th>
+              <td>{{ entreprise.name}}</td>
+            </tr>
+            <tr>
+              <th>{{ 'entreprise.label.directeur_name' | trans }}</th>
+              <td>{{ entreprise.directeurName}}</td>
+            </tr>
+            <tr>
+              <th>{{ 'entreprise.label.num_licence' | trans }}</th>
+              <td>{{ entreprise.numLicence}}</td>
+            </tr>
+
+            <tr>
+            <th>{{ 'entreprise.label.date_licence' | trans }}</th>
+            <td>{{ entreprise.dateLicence | date('d/m/Y H:i')}}</td>
+            </tr>
+            <tr>
+              <th>{{ 'entreprise.label.num_fiscal_pro' | trans }}</th>
+              <td>{{ entreprise.numFiscalPro}}</td>
+            </tr>
+            <tr>
+              <th>{{ 'entreprise.label.num_enregistrement_commercial' | trans }}</th>
+              <td>{{ entreprise.numEnregistrementCommercial}}</td>
+            </tr>
+
+            <tr>
+              <th>{{ 'entreprise.label.ville_commercial' | trans }}</th>
+              <td>{{ entreprise.villeCommercial}}</td>
+            </tr>
+
+            <tr>
+              <th>{{ 'entreprise.label.ice' | trans }}</th>
+              <td>{{ entreprise.ice}}</td>
+            </tr>
+
+
+
+        <tr>
+          <th>{{ 'entreprise.label.email' | trans }}</th>
+          <td>{{ entreprise.email}}</td>
+        </tr>
+        <tr>
+          <th>{{ 'entreprise.label.telephone1' | trans }}</th>
+          <td>{{ entreprise.telephone1 }}</td>
+
+        </tr>
+        <tr>
+          <th>{{ 'entreprise.label.fax' | trans }}</th>
+          <td>{{ entreprise.fax }}</td>
+
+        </tr>
+
+        <tr>
+          <th>{{ 'entreprise.label.pays' | trans }}</th>
+          <td>{{ entreprise.pays }}</td>
+
+        </tr>
+        <tr>
+          <th>{{ 'entreprise.label.pays' | trans }}</th>
+          <td>{{ entreprise.pays }}</td>
+
+        </tr>
+
+
+
+
+          <tr>
+            <th>{{ 'entreprise.label.created' | trans }}</th>
+            <td>{{ entreprise.created | date('d/m/Y H:i')}}</td>
+
+            <th>{{ 'entreprise.label.updated' | trans }}</th>
+            <td>{{ entreprise.updated | date('d/m/Y H:i')}}</td>
+          </tr>
+
+    </tbody>
+</table>
+</div>
+
+</div>
+
+
+
+</div>
+                <!-- /.tab-pane -->
+              <!-- .tab-pane -->
+              {# <div class="tab-pane" id="tab_2">
+
+
+
+              </div>
+              <!-- /.tab-pane -->
+
+  <!-- .tab-pane -->
+              <div class="tab-pane" id="tab_3">
+
+
+
+
+              </div> #}
+              <!-- /.tab-pane -->
+            </div>
+            <!-- /.tab-content -->
+
+          </div><!-- /.card-body -->
+        </div>
+        <!-- ./card -->
+      </div>
+      <!-- /.col -->
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+
+        </div>
+    </div>
+{% endblock %}

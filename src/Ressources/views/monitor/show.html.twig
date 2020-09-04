@@ -1,0 +1,187 @@
+{% extends "base.html.twig" %}
+
+{% trans_default_domain 'Monitor' %}
+
+
+{% block title %}
+<title>{{ 'monitor.show.title' | trans }} | {{ parent() }}</title>
+
+{% endblock %}
+
+{% block content_header %}
+
+<div class="content-header">
+  <div class="container-fluid">
+    <div class="row mb-2">
+      <div class="col-sm-6">
+        <h1 class="m-0 text-dark">{{ 'monitor.show.title' | trans }} </h1>
+
+      </div><!-- /.col -->
+      <div class="col-sm-6">
+        <ol class="breadcrumb float-sm-right">
+          <li class="breadcrumb-item"><a href="#">Home</a></li>
+          <li class="breadcrumb-item"><a href="{{ path('admin_monitor_index') }}">Moniteurs</a></li>
+          <li class="breadcrumb-item active"> {{ monitor.id | trans}}</li>
+        </ol>
+      </div><!-- /.col -->
+    </div><!-- /.row -->
+  </div><!-- /.container-fluid -->
+</div>
+
+{% endblock %}
+
+
+{% block content %}
+
+
+    <div class="row">
+      <div class="col-12">
+        <!-- Custom Tabs -->
+        <div class="card">
+          <div class="card-header d-flex p-0">
+
+            <ul class="nav nav-pills p-2">
+              <li class="nav-item"><a class="nav-link active" href="#tab_1" data-toggle="tab">Coordonnées</a></li>
+              {# <li class="nav-item"><a class="nav-link" href="#tab_2" data-toggle="tab">Examen</a></li> #}
+              {# <li class="nav-item"><a class="nav-link" href="#tab_3" data-toggle="tab">Paiement</a></li> #}
+
+            </ul>
+          </div><!-- /.card-header -->
+          <div class="card-body">
+            <div class="box-header with-border">
+              <a href="{{ path('admin_monitor_index') }}" class="btn btn-sm btn-primary">
+            		<i class="fa fa-reply" aria-hidden="true"></i>
+            		{{ 'actions.back_to_list' | trans({}, 'AppBundle') }}
+            	</a>
+              <div class="pull-right">
+              <a href="{{ path('admin_monitor_edit', { 'id': monitor.id }) }}" class="btn btn-sm btn-warning" data-toggle="tooltip" title="{{ 'actions.update' | trans({}, 'AppBundle') }}">
+                <i class="fa fa-pencil"> </i>  <span class="hidden-xs hidden-sm"> {{ 'actions.update' | trans ({}, 'AppBundle') }}</span>
+              </a>
+              <a href="{{ path('admin_monitor_delete', { 'id': monitor.id }) }}" class="btn btn-sm btn-danger" data-toggle="tooltip" title="{{ 'actions.delete' | trans({}, 'AppBundle') }}">
+                <i class="fa fa-trash-o"> </i>  <span class="hidden-xs hidden-sm"> {{ 'actions.delete' | trans ({}, 'AppBundle') }}</span>
+              </a>
+              </div>
+              </div>
+
+      <!-- /.tab-content -->
+            <div class="tab-content">
+
+                <!-- /.tab-pane -->
+              <div class="tab-pane active" id="tab_1">
+              <div class="line line-right">
+              {% if monitor.photo is not empty %}
+
+              <a href="{{ path('admin_monitor_show', { 'id': monitor.id }) }}">
+              <img    src="{{ asset('uploads/images/monitor/' ~ monitor.photo)}}"  />
+              </a>
+              {% else %}
+              <img  src="{{ asset('uploads/images/user.png')}}"  />
+
+
+              {% endif %}
+                </div>
+              <div class="row">
+      <div class="col-sm table-responsive">
+          <table class="table">
+          <tbody>
+            <tr>
+            <th style="width:30%">{{ 'monitor.label.gender' | trans }}</th>
+            {% if monitor.gender == 1 %}
+            <td>{{ 'gender.mal' | trans}}</td>
+           {% else %}
+            <td>{{ 'gender.female' | trans}}</td>
+          {% endif %}
+              <th style="width:30%">{{ 'monitor.label.carte_identite' | trans }}</th>
+              <td>{{ monitor.carteIdentite}}</td>
+           </tr>
+           <tr>
+          <th>{{ 'monitor.label.first_name' | trans }}</th>
+          <td>{{ monitor.firstName}}</td>
+          </tr>
+            <tr>
+              <th>{{ 'monitor.label.last_name' | trans }}</th>
+              <td>{{ monitor.lastName}}</td>
+            </tr>
+
+        <tr>
+          <th>{{ 'monitor.label.date_naissance' | trans }}</th>
+          <td>{{ monitor.dateNaissance  | date('d/m/Y')}}</td>
+
+          <th>{{ 'monitor.label.lieu_naissance' | trans }}</th>
+          <td>{{ monitor.lieuNaissance | default("France")}}</td>
+        </tr>
+        <tr>
+          <th>{{ 'monitor.label.pays_naissance' | trans }}</th>
+          <td>{{ monitor.paysNaissance | default("--")}}</td>
+        </tr>
+        <tr>
+          <th>{{ 'monitor.label.address' | trans }}</th>
+          <td>{{ monitor.address | default("--")}}</td>
+        </tr>
+
+        <tr>
+          <th>{{ 'monitor.label.email' | trans }}</th>
+          <td>{{ monitor.email}}</td>
+        </tr>
+        <tr>
+          <th>{{ 'monitor.label.telephone1' | trans }}</th>
+          <td>{{ monitor.telephone1 }}</td>
+
+          <th>{{ 'monitor.label.telephone2' | trans }}</th>
+          <td>{{ monitor.telephone2 }}</td>
+        </tr>
+
+
+
+
+
+
+          <tr>
+            <th>{{ 'monitor.label.created' | trans }}</th>
+            <td>{{ monitor.created | date('d/m/Y H:i')}}</td>
+
+            <th>{{ 'monitor.label.label.updated' | trans }}</th>
+            <td>{{ monitor.updated | date('d/m/Y H:i')}}</td>
+          </tr>
+
+    </tbody>
+</table>
+</div>
+
+</div>
+
+
+
+</div>
+                <!-- /.tab-pane -->
+              <!-- .tab-pane -->
+              {# <div class="tab-pane" id="tab_2">
+
+
+
+              </div>
+              <!-- /.tab-pane -->
+
+  <!-- .tab-pane -->
+              <div class="tab-pane" id="tab_3">
+
+
+
+
+              </div> #}
+              <!-- /.tab-pane -->
+            </div>
+            <!-- /.tab-content -->
+
+          </div><!-- /.card-body -->
+        </div>
+        <!-- ./card -->
+      </div>
+      <!-- /.col -->
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+
+        </div>
+    </div>
+{% endblock %}
