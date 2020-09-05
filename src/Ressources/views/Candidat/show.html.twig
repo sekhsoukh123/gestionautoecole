@@ -43,7 +43,9 @@
             <ul class="nav nav-pills p-2">
               <li class="nav-item"><a class="nav-link active" href="#tab_1" data-toggle="tab">Coordonnées</a></li>
               <li class="nav-item"><a class="nav-link" href="#tab_2" data-toggle="tab">Examen</a></li>
-              <li class="nav-item"><a class="nav-link" href="#tab_3" data-toggle="tab">Paiement</a></li>
+              <li class="nav-item"><a class="nav-link" href="#tab_3" data-toggle="tab">Paiements</a></li>
+                <li class="nav-item"><a class="nav-link" href="#tab_4" data-toggle="tab">Séances théoriques</a></li>
+                  <li class="nav-item"><a class="nav-link" href="#tab_5" data-toggle="tab">Séances pratiques</a></li>
 
             </ul>
           </div><!-- /.card-header -->
@@ -336,7 +338,6 @@
                               <td>{{ candidat.prix - total}}.00 DH</td>
                               {% else %}
                                   <td>Il a payé toutes ses sommes</td>
-
                             {% endif %}
 
 
@@ -362,6 +363,200 @@
 
               </div>
               <!-- /.tab-pane -->
+
+
+                <!-- .tab-pane -->
+                            <div class="tab-pane" id="tab_4">
+
+                            {% if candidat.ctheoriques is not empty %}
+
+                  <div class="card-body table-responsive no-padding">
+                  <div class="box-header">
+                  {% if (candidat.prix - total) != 0 %}
+                  <a href="{{ path('admin_ctheorique_new' , {'candidat_id':candidat.id}) }}" class="btn btn-sm btn-primary">
+                  {{ 'actions.add' | trans({}, 'AppBundle') }}
+                </a>
+
+                {% endif %}
+
+
+                  </div>
+                      <table class="table table-hover">
+                          <tr>
+                              <th>ID</th>
+                              <th>{{ 'ctheorique.label.seance' | trans({},'Ctheorique') }}</th>
+                               <th>{{ 'candidat.label.created' | trans }}</th>
+                               <th>{{ 'candidat.label.updated' | trans }}</th>
+                               <th>Actions</th>
+                          </tr>
+                      {% for ctheorique in candidat.ctheoriques  %}
+                      {% if not ctheorique.deleted %}
+                          <tr>
+                              <td>
+                            {{ ctheorique.id }}
+                              </td>
+                              <td>{{ ctheorique.seance }}</td>
+
+                              <td>{{ ctheorique.created | date('d/m/Y H:i')}}</td>
+                                <td>{{ ctheorique.updated | date('d/m/Y H:i')}}</td>
+                              <td>
+                              {# <a href="{ { path('admin_ctheorique_show', { 'id': ctheorique.id }) }}" class="btn btn-primary btn-sm" data-toggle="tooltip" title="Afficher"> #}
+                                {# <i class="fa fa-eye"></i> #}
+                              {# </a> #}
+                              <a href="{{ path('admin_ctheorique_edit',  { 'id': ctheorique.id , 'candidat_id' : ctheorique.candidat.id }) }}" class="btn btn-warning btn-sm" data-toggle="tooltip" title="Modifier">
+                                <i class="fa fa-pencil-square-o"></i>
+                              </a>
+                              <a href="{{ path('admin_ctheorique_delete', { 'id': ctheorique.id }) }}" class="btn btn-danger btn-sm" title="{{ 'actions.confirmation' | trans }}">
+                                <i class="fa fa-trash-o"></i>
+                              </a>
+
+                              </td>
+                          </tr>
+                            {% endif %}
+                      {% endfor %}
+                      </table>
+                  </div>
+                  <br/>
+                  <div class="row">
+                        <div class="col-sm-4 table-responsive">
+                            <table class="table pull-right">
+                            <tbody>
+                            <tr>
+                              <th>{{ 'ctheorique.label.nombreheure' | trans({},'Ctheorique') }}</th>
+                              <td>20 Heures</td>
+                            </tr>
+                              <tr>
+                                <th>{{ 'ctheorique.label.total' | trans({},'Ctheorique') }}</th>
+                                <td>{{  total1}} Heures</td>
+                              </tr>
+                              <tr>
+                                <th>{{ 'ctheorique.label.rest' | trans({},'Ctheorique') }}</th>
+                              {% if ( total1) > 0  %}
+                              <td>{{ 20 - total1}} Heures</td>
+                              {% else %}
+                                <td>Il a términé</td>
+                              {% endif %}
+
+
+                              </tr>
+                              </tbody>
+                          </table>
+                      </div>
+
+                        </div>
+                  {% else %}
+                  <div class="empty-box sm">
+                <i class="fa fa-frown-o" aria-hidden="true"></i>
+                    <p>Aucun séance théorique associée.</p>
+
+                    <a href="{{ path('admin_ctheorique_new' , {'candidat_id':candidat.id}) }}" class="btn btn-sm btn-primary">
+
+                      {{ 'actions.add' | trans({}, 'AppBundle') }}
+                    </a>
+                  </div>
+
+                  {% endif %}
+
+
+                            </div>
+                            <!-- /.tab-pane -->
+
+
+                              <!-- .tab-pane -->
+                                          <div class="tab-pane" id="tab_5">
+
+                                          {% if candidat.cpratiques is not empty %}
+
+                                <div class="card-body table-responsive no-padding">
+                                <div class="box-header">
+                                {% if (candidat.prix - total) != 0 %}
+                                <a href="{{ path('admin_cpratique_new' , {'candidat_id':candidat.id}) }}" class="btn btn-sm btn-primary">
+                                {{ 'actions.add' | trans({}, 'AppBundle') }}
+                              </a>
+
+                              {% endif %}
+
+
+                                </div>
+                                    <table class="table table-hover">
+                                        <tr>
+                                            <th>ID</th>
+                                            <th>{{ 'cpratique.label.montant' | trans({},'Cpratique') }}</th>
+                                             <th>{{ 'candidat.label.created' | trans }}</th>
+                                              <th>{{ 'candidat.label.updated' | trans }}</th>
+                                            <th>Actions</th>
+                                        </tr>
+                                    {% for cpratique in candidat.cpratiques  %}
+                                    {% if not cpratique.deleted %}
+                                        <tr>
+                                            <td>
+                                          {{ cpratique.id }}
+                                            </td>
+                                            <td>{{ cpratique.seance }}</td>
+
+                                            <td>{{ cpratique.created | date('d/m/Y H:i')}}</td>
+                                              <td>{{ cpratique.updated | date('d/m/Y H:i')}}</td>
+                                            <td>
+                                            {# <a href="{ { path('admin_cpratique_show', { 'id': cpratique.id }) }}" class="btn btn-primary btn-sm" data-toggle="tooltip" title="Afficher"> #}
+                                              {# <i class="fa fa-eye"></i> #}
+                                            {# </a> #}
+                                            <a href="{{ path('admin_cpratique_edit',  { 'id': cpratique.id , 'candidat_id' : cpratique.candidat.id }) }}" class="btn btn-warning btn-sm" data-toggle="tooltip" title="Modifier">
+                                              <i class="fa fa-pencil-square-o"></i>
+                                            </a>
+                                            <a href="{{ path('admin_cpratique_delete', { 'id': cpratique.id }) }}" class="btn btn-danger btn-sm" title="{{ 'actions.confirmation' | trans }}">
+                                              <i class="fa fa-trash-o"></i>
+                                            </a>
+
+                                            </td>
+                                        </tr>
+                                          {% endif %}
+                                    {% endfor %}
+                                    </table>
+                                </div>
+                                <br/>
+                                <div class="row">
+                                      <div class="col-sm-4 table-responsive">
+                                          <table class="table pull-right">
+                                          <tbody>
+                                          <tr>
+                                            <th>{{ 'ctheorique.label.nombreheure' | trans({},'Ctheorique')   }}</th>
+                                            <td>20 Heures</td>
+                                          </tr>
+                                            <tr>
+                                              <th>{{ 'ctheorique.label.total' | trans({},'Ctheorique') }}</th>
+                                              <td>{{  total2}} Heures</td>
+                                            </tr>
+                                            <tr>
+                                              <th>{{ 'ctheorique.label.rest' | trans({},'Ctheorique') }}</th>
+                                            {% if ( total2) > 0 %}
+                                            <td>{{ 20 - total2}} Heures</td>
+                                            {% else %}
+                                              <td>Il a términé</td>
+                                            {% endif %}
+
+
+                                            </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+
+                                      </div>
+                                {% else %}
+                                <div class="empty-box sm">
+                              <i class="fa fa-frown-o" aria-hidden="true"></i>
+                                  <p>Aucun séance pratique associée.</p>
+
+                                  <a href="{{ path('admin_cpratique_new' , {'candidat_id':candidat.id}) }}" class="btn btn-sm btn-primary">
+
+                                    {{ 'actions.add' | trans({}, 'AppBundle') }}
+                                  </a>
+                                </div>
+
+                                {% endif %}
+
+
+                                          </div>
+                                          <!-- /.tab-pane -->
             </div>
             <!-- /.tab-content -->
 
